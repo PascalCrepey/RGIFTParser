@@ -1,5 +1,28 @@
 library(parcr)
 
+GIFTParser <- function(text, debug = FALSE){
+  if(length(text) > 1) {
+    text = paste(text, collapse = "")
+  }
+  text = gsub("\n", " ", text)
+  text = gsub("(::[^:]+::)", "\n\\1\n", text)
+  #here we use R raw text format r"()" to avoid double escaping
+  text = gsub(r"((\{|\}|(?<!\\)=|~))", "\n\\1", x = text, perl = TRUE)
+  text = gsub("\\$CATEGORY", "\n\\$CATEGORY", text)
+  #remove trailing and leading whitespace (before and after \n)
+  text = gsub("\n\\s+", "\n", text) |> gsub("\\s+\n", "\n", x = _) |>
+    gsub("^\\s+", "", x = _) |> gsub("\\s+$", "", x = _)
+  vec_text = strsplit(text,"\n")[[1]]
+ # browser()
+  if(debug){
+    print(vec_text)
+    res = reporter(qcms())(vec_text)
+  }else{
+    res = qcms()(vec_text)
+  }
+
+  return(res)
+}
 
 qcms <- function(){
   one_or_more(GIFTBlock()) %then% eof()
@@ -10,15 +33,18 @@ GIFTBlock <- function(){
   (GIFTQuestion() %or% GIFTCategory())
 }
 
+message_category <- function(x){
+  message("we have a category")
+  return(x)
+}
+
 GIFTCategory <- function(){
   MaybeEmpty() %then%
     match_s(parse_category) %then%
-    Spacer()
+    MaybeEmpty() %using% message_category
 }
 
 #reporter(GIFTCategory())(text)
-
-
 parse_category <- function(line){
   m <- stringr::str_match(line, "^\\$CATEGORY: ([\\w\\W*]+)$")
   if (is.na(m[1])) {
@@ -31,9 +57,9 @@ parse_category <- function(line){
 #parse_category(raw_text)
 
 GIFTQuestion <- function(){
-  zero_or_one(GIFTQuestionTitle())
-    %then% GIFTQuestionText()
-    %then% GIFTQuestionAnswers()
+  zero_or_one(GIFTQuestionTitle()) %then%
+    GIFTQuestionText() %then%
+    GIFTQuestionAnswers()
 }
 
 GIFTQuestionAnswers <- function(){
@@ -43,57 +69,102 @@ GIFTQuestionAnswers <- function(){
 }
 
 GIFTAnswer <- function(){
-  MaybeEmpty() %then%
-  operatorAnswer() %then%
-    zero_or_one(GIFTweight()) %then%
-    GIFTAnswerText() %then%
-    zero_or_one(GIFTAnswerFeedback())
+  match_s(parse_whole_answer)
 }
 
-operatorAnswer <- function(){
-  literal("=") %or%
-  literal("~")
-}
+parse_whole_answer <- function(x) {
+  #first get the operator
+  operator = parse_operator(x)
+  #then get the weight (if there is one)
+  weight = parse_weight(x)
+  #then get the answer
+  answer = parse_answer(x)
+  #then get the feedback (if there is one)
+  feedback = parse_feedback(x)
 
-GIFTweight <- function(){
-  literal("#") %then% one_or_more(digit())
+  #if no operator or no answer then returns list()
+  if(is.null(operator) || is.null(answer)){
+    return(list())
+  }else{
+    #do something
+    res = paste(operator, ":", weight, ":", answer, ":", feedback)
+    message("it works for ", res)
+    return(res)
+  }
 }
-
-numbers <- function(x) {
-  m <- gregexpr("[[:digit:]]+", x)
-  matches <- as.numeric(regmatches(x,m)[[1]])
-  if (length(matches)==0) {
-    return(list()) # we signal parser failure when no numbers were found
+#parses operator = or ~ with potential space before
+parse_operator <-function(line){
+  m <- stringr::str_match(line, "^\\s*(=|~)")
+  if (is.na(m[1])) {
+    return(NULL) # signal failure: not a title
   } else {
-    return(matches)
+    return(m[2])
+  }
+}
+# parse_operator(" =")
+# parse_operator("\t ~sfsf")
+# parse_operator("\t ::toei")
+#parses weight either positive or negative decimal or integer number
+parse_weight <-function(line){
+  m <- stringr::str_match(line, "^\\s*(?:=|~)%(\\-?\\d*(?:.|\\,)?\\d*)%")
+  if (is.na(m[1])) {
+    return(NULL) # signal failure: not a title
+  } else {
+    return(as.numeric(sub(",",".",m[2])))
+  }
+}
+# line = " =%50%"
+# stringr::str_match(line, "^\\s*(?:=|~)%(\\-?\\d*(?:.|,)?\\d*)%")
+# parse_weight(" =%50%")
+# parse_weight(" ~%-50%")
+# parse_weight(" ~%-33.33%")
+# parse_weight(" ~%-33,33%")
+# parse_weight("\t ~sfsf")
+# parse_weight("\t ::toei")
+
+#parses answer text
+parse_answer <-function(line){
+  m <- stringr::str_match(line, "^\\s*(?:=|~)(?:%\\-?\\d*(?:.|\\,)?\\d*%)?\\s*([^#]+)\\#*")
+  if (is.na(m[1])) {
+    return(NULL) # signal failure: not an answer
+  } else {
+    return(m[2])
   }
 }
 
-GIFTAnswerText <- function(){
-  one_or_more(not(literal("="))) %then%
-    literal("=")
+# parse_answer(" =%50% ceci est une réponse")
+# parse_answer(" =%50% ceci est une réponse # ceci est un feedback")
+
+
+#parses feedback text
+parse_feedback <-function(line){
+  m <- stringr::str_match(line, "^.*\\#(.*)$")
+  if (is.na(m[1])) {
+    return(NULL) # signal failure: not a parse_feedback
+  } else {
+    return(m[2])
+  }
 }
-GIFTAnswerFeedback <- function(){
-  literal("#") %then% one_or_more(not(literal("}")))
-}
+# parse_feedback(" =%50% ceci est une réponse # ceci est un feedback")
+# parse_feedback(" =%50% ceci est une réponse ")
 
 parse_title <- function(line){
-  m <- stringr::str_match(line, "^::([:print:]+)")
+  m <- stringr::str_match(line, "^::([:print:]+)::")
   if (is.na(m[1])) {
     return(list()) # signal failure: not a title
   } else {
     return(m[2])
   }
 }
-test_title = "::AI-taux_attaque"
-parse_title(test_title)
+# test_title = "::AI-taux_attaque"
+# parse_title(test_title)
 
 GIFTQuestionTitle <- function() {
   match_s(parse_title)
 }
 
 parse_question_text <- function(line){
-  m <- stringr::str_match(line, "::([:print:]+)")
+  m <- stringr::str_match(line, "([:print:]+)")
   if (is.na(m[1])) {
     return(list()) # signal failure: not a title
   } else {
@@ -104,7 +175,5 @@ parse_question_text <- function(line){
 GIFTQuestionText <- function() {
   match_s(parse_question_text)
 }
-test_text = "::[html]Pendant la dernière semaine du mois de septembre 2007, 90 personnes d’un petit village du Morbihan (population 650 habitants) participent à un dîner préparé par un épidémiologiste farceur. Au cours des 2 jours suivants, 36 participants développent une infection à <i>Salmonella</i>. Le taux d'attaque parmi les participants est :{"
-parse_question_text(test_text)
-GIFTQuestionText()(test_text)
+
 
