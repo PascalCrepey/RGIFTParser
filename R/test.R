@@ -1,26 +1,5 @@
 library(parcr)
 
-raw_text <- "
-
-$CATEGORY: test
-
-::AI-taux_attaque::[html]Pendant la dernière semaine du mois de septembre 2007, 90 personnes d’un petit village du Morbihan (population 650 habitants) participent à un dîner préparé par un épidémiologiste farceur. Au cours des 2 jours suivants, 36 participants développent une infection à <i>Salmonella</i>. Le taux d'attaque parmi les participants est :{
-	~0,4%
-	~5,5%
-	~14,3%
-	=40,0%
-	~l’information donnée ne permet pas de calculer le taux d’attaque
-}"
-
-text = strsplit(raw_text, "\n")[[1]]
-
-raw_text2 = "What two people are entombed in Grant's tomb? {
-   ~%-100%No one
-   ~%50%Grant
-   ~%50%Grant's wife
-   ~%-100%Grant's father
-}"
-
 
 qcms <- function(){
   one_or_more(GIFTBlock()) %then% eof()
@@ -49,10 +28,12 @@ parse_category <- function(line){
   }
 }
 # line = "$CATEGORY: tom/dick/harry"
-parse_category(raw_text)
+#parse_category(raw_text)
 
 GIFTQuestion <- function(){
-  GIFTQuestionTitle() %then% GIFTQuestionText() %then% GIFTQuestionAnswers()
+  zero_or_one(GIFTQuestionTitle())
+    %then% GIFTQuestionText()
+    %then% GIFTQuestionAnswers()
 }
 
 GIFTQuestionAnswers <- function(){
@@ -62,6 +43,7 @@ GIFTQuestionAnswers <- function(){
 }
 
 GIFTAnswer <- function(){
+  MaybeEmpty() %then%
   operatorAnswer() %then%
     zero_or_one(GIFTweight()) %then%
     GIFTAnswerText() %then%
@@ -77,6 +59,16 @@ GIFTweight <- function(){
   literal("#") %then% one_or_more(digit())
 }
 
+numbers <- function(x) {
+  m <- gregexpr("[[:digit:]]+", x)
+  matches <- as.numeric(regmatches(x,m)[[1]])
+  if (length(matches)==0) {
+    return(list()) # we signal parser failure when no numbers were found
+  } else {
+    return(matches)
+  }
+}
+
 GIFTAnswerText <- function(){
   one_or_more(not(literal("="))) %then%
     literal("=")
@@ -86,22 +78,22 @@ GIFTAnswerFeedback <- function(){
 }
 
 parse_title <- function(line){
-  m <- stringr::str_match(line, "^::([\\w\\W]+)::")
+  m <- stringr::str_match(line, "^::([:print:]+)")
   if (is.na(m[1])) {
     return(list()) # signal failure: not a title
   } else {
     return(m[2])
   }
 }
-# test_title = "::AI-taux_attaque::"
-# parse_title(test_title)
+test_title = "::AI-taux_attaque"
+parse_title(test_title)
 
 GIFTQuestionTitle <- function() {
   match_s(parse_title)
 }
 
 parse_question_text <- function(line){
-  m <- stringr::str_match(line, "::(\\w+){")
+  m <- stringr::str_match(line, "::([:print:]+)")
   if (is.na(m[1])) {
     return(list()) # signal failure: not a title
   } else {
@@ -112,12 +104,7 @@ parse_question_text <- function(line){
 GIFTQuestionText <- function() {
   match_s(parse_question_text)
 }
+test_text = "::[html]Pendant la dernière semaine du mois de septembre 2007, 90 personnes d’un petit village du Morbihan (population 650 habitants) participent à un dîner préparé par un épidémiologiste farceur. Au cours des 2 jours suivants, 36 participants développent une infection à <i>Salmonella</i>. Le taux d'attaque parmi les participants est :{"
+parse_question_text(test_text)
+GIFTQuestionText()(test_text)
 
-
-res = qcms()(text)
-res2 = qcms()(raw_text2)
-print(res)
-print(res2)
-
-
-reporter(qcms())(text)
