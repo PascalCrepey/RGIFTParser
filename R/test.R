@@ -30,7 +30,8 @@ qcms <- function(){
 
 GIFTBlock <- function(){
   MaybeEmpty() %then%
-  (GIFTQuestion() %or% GIFTCategory())
+  (GIFTQuestion() %or% GIFTCategory()) %using%
+    function(x) list(x)
 }
 
 message_category <- function(x){
@@ -41,7 +42,7 @@ message_category <- function(x){
 GIFTCategory <- function(){
   MaybeEmpty() %then%
     match_s(parse_category) %then%
-    MaybeEmpty() %using% message_category
+    MaybeEmpty() %using% function(x) list(category = x)
 }
 
 #reporter(GIFTCategory())(text)
