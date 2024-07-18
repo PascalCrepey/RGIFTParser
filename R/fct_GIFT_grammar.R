@@ -1,51 +1,28 @@
-library(parcr)
-
-current_category = "No category"
-
-GIFTParser <- function(text, debug = FALSE){
-  if(length(text) > 1) {
-    text = paste(text, collapse = "")
-  }
-  text = gsub("\n", " ", text)
-  text = gsub("(::[^:]+::)", "\n\\1\n", text)
-  #here we use R raw text format r"()" to avoid double escaping
-  text = gsub(r"((\{|\}|(?<!\\)=|~))", "\n\\1", x = text, perl = TRUE)
-  text = gsub("\\$CATEGORY", "\n\\$CATEGORY", text)
-  #remove trailing and leading whitespace (before and after \n)
-  text = gsub("\n\\s+", "\n", text) |> gsub("\\s+\n", "\n", x = _) |>
-    gsub("^\\s+", "", x = _) |> gsub("\\s+$", "", x = _)
-  vec_text = strsplit(text,"\n")[[1]]
- # browser()
-  if(debug){
-    print(vec_text)
-    res = reporter(qcms())(vec_text)
-  }else{
-    res = qcms()(vec_text)
-  }
-
-  return(res)
-}
-
+#' @importFrom parcr `%then%`
 qcms <- function(){
-  one_or_more(GIFTBlock()) %then% eof()
+  parcr::one_or_more(GIFTBlock()) %then% parcr::eof()
 }
 
+#' @importFrom parcr `%using%` `%or%`
 GIFTBlock <- function(){
-  MaybeEmpty() %then%
-  (GIFTQuestion() %or% GIFTCategory()) %using%
+  parcr::MaybeEmpty() %then%
+    (GIFTQuestion() %or% GIFTCategory()) %using%
     function(x) {
       #message("Block: ", x, length(x))
       if(!is.null(unlist(x))) {
         return(list(x))
+      } else {
+        return(list())
       }
     }
 }
 
 GIFTCategory <- function(){
-  MaybeEmpty() %then%
-    match_s(parse_category) %then%
-    MaybeEmpty() %using% function(x) {
-      current_category <<- x
+  parcr::MaybeEmpty() %then%
+    parcr::match_s(parse_category) %then%
+    parcr::MaybeEmpty() %using% function(x) {
+      if(parcr::retrieve("debug")) message("Category: ", x)
+      parcr::store("current_category" , x)
       return(NULL)
     }
 }
@@ -63,19 +40,21 @@ parse_category <- function(line){
 #parse_category(raw_text)
 
 GIFTQuestion <- function(){
-  (zero_or_one(GIFTQuestionTitle()) %using% function(x) c(title = x, category = current_category) )%then%
-    GIFTQuestionText() %then%
+  (parcr::zero_or_one(GIFTQuestionTitle()) %using%
+     \(x) c(category = parcr::retrieve("current_category"), title = x)) %then%
+    (GIFTQuestionText() %using%
+       \(x) c(text = x)) %then%
     GIFTQuestionAnswers()
 }
-
+#' @importFrom parcr `%thenx%` `%xthen%`
 GIFTQuestionAnswers <- function(){
-  literal("{") %thenx%
-    one_or_more(GIFTAnswer()) %xthen%
-    literal("}") %using% function(x) list(x)
+  parcr::literal("{") %thenx%
+    parcr::one_or_more(GIFTAnswer()) %xthen%
+    parcr::literal("}") %using% function(x) list(answers = x)
 }
 
 GIFTAnswer <- function(){
-  match_s(parse_whole_answer) %using% function(x) list(x)
+  parcr::match_s(parse_whole_answer) %using% function(x) list(x)
 }
 
 parse_whole_answer <- function(x) {
@@ -93,7 +72,7 @@ parse_whole_answer <- function(x) {
     return(list())
   }else{
     res = paste(operator, ":", weight, ":", answer, ":", feedback)
-    message("it works for ", res)
+    if(parcr::retrieve("debug")) message("Answer: ", res)
     return(list(operator = operator,
                 weight = weight,
                 answer = answer,
@@ -104,7 +83,7 @@ parse_whole_answer <- function(x) {
 parse_operator <-function(line){
   m <- stringr::str_match(line, "^\\s*(=|~)")
   if (is.na(m[1])) {
-    return(NULL) # signal failure: not a title
+    return(NULL) # signal failure: not an operator
   } else {
     return(m[2])
   }
@@ -116,7 +95,7 @@ parse_operator <-function(line){
 parse_weight <-function(line){
   m <- stringr::str_match(line, "^\\s*(?:=|~)%(\\-?\\d*(?:.|\\,)?\\d*)%")
   if (is.na(m[1])) {
-    return(NULL) # signal failure: not a title
+    return(NULL) # signal failure: not a weight
   } else {
     return(as.numeric(sub(",",".",m[2])))
   }
@@ -148,7 +127,7 @@ parse_answer <-function(line){
 parse_feedback <-function(line){
   m <- stringr::str_match(line, "^.*\\#(.*)$")
   if (is.na(m[1])) {
-    return(NULL) # signal failure: not a parse_feedback
+    return(NULL) # signal failure: not a feedback
   } else {
     return(m[2])
   }
@@ -168,20 +147,18 @@ parse_title <- function(line){
 # parse_title(test_title)
 
 GIFTQuestionTitle <- function() {
-  match_s(parse_title)
+  parcr::match_s(parse_title)
 }
 
 parse_question_text <- function(line){
   m <- stringr::str_match(line, "([:print:]+)")
   if (is.na(m[1])) {
-    return(list()) # signal failure: not a title
+    return(list()) # signal failure: not a text
   } else {
     return(m[2])
   }
 }
 
 GIFTQuestionText <- function() {
-  match_s(parse_question_text)
+  parcr::match_s(parse_question_text)
 }
-
-

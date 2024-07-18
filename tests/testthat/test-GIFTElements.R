@@ -22,7 +22,7 @@ test_that("Question text",{
 test_that("Whole GIFT file", {
   #read the GIFT file
   text = readLines(system.file("extdata/test.gift", package = "RGIFTParser"))
-  res = GIFTParser(text, debug =TRUE)
+  res = GIFTParser(text)
   expect_equal(res$R, list())
 })
 
