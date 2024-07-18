@@ -1,5 +1,7 @@
 library(parcr)
 
+current_category = "No category"
+
 GIFTParser <- function(text, debug = FALSE){
   if(length(text) > 1) {
     text = paste(text, collapse = "")
@@ -31,18 +33,21 @@ qcms <- function(){
 GIFTBlock <- function(){
   MaybeEmpty() %then%
   (GIFTQuestion() %or% GIFTCategory()) %using%
-    function(x) list(x)
-}
-
-message_category <- function(x){
-  message("we have a category")
-  return(x)
+    function(x) {
+      #message("Block: ", x, length(x))
+      if(!is.null(unlist(x))) {
+        return(list(x))
+      }
+    }
 }
 
 GIFTCategory <- function(){
   MaybeEmpty() %then%
     match_s(parse_category) %then%
-    MaybeEmpty() %using% function(x) list(category = x)
+    MaybeEmpty() %using% function(x) {
+      current_category <<- x
+      return(NULL)
+    }
 }
 
 #reporter(GIFTCategory())(text)
@@ -58,19 +63,19 @@ parse_category <- function(line){
 #parse_category(raw_text)
 
 GIFTQuestion <- function(){
-  zero_or_one(GIFTQuestionTitle()) %then%
+  (zero_or_one(GIFTQuestionTitle()) %using% function(x) c(title = x, category = current_category) )%then%
     GIFTQuestionText() %then%
     GIFTQuestionAnswers()
 }
 
 GIFTQuestionAnswers <- function(){
-  literal("{") %ret% NULL  %then%
-    one_or_more(GIFTAnswer()) %then%
-    literal("}") %ret% NULL
+  literal("{") %thenx%
+    one_or_more(GIFTAnswer()) %xthen%
+    literal("}") %using% function(x) list(x)
 }
 
 GIFTAnswer <- function(){
-  match_s(parse_whole_answer)
+  match_s(parse_whole_answer) %using% function(x) list(x)
 }
 
 parse_whole_answer <- function(x) {
@@ -87,10 +92,12 @@ parse_whole_answer <- function(x) {
   if(is.null(operator) || is.null(answer)){
     return(list())
   }else{
-    #do something
     res = paste(operator, ":", weight, ":", answer, ":", feedback)
     message("it works for ", res)
-    return(res)
+    return(list(operator = operator,
+                weight = weight,
+                answer = answer,
+                feedback = feedback))
   }
 }
 #parses operator = or ~ with potential space before
