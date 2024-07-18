@@ -64,9 +64,9 @@ GIFTQuestion <- function(){
 }
 
 GIFTQuestionAnswers <- function(){
-  literal("{") %then%
+  literal("{") %ret% NULL  %then%
     one_or_more(GIFTAnswer()) %then%
-    literal("}")
+    literal("}") %ret% NULL
 }
 
 GIFTAnswer <- function(){

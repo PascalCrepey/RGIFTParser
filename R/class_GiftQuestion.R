@@ -31,6 +31,6 @@ GIFTQuestion <- R6::R6Class("GIFTQuestion",
                               #' @field category The category of the question
                               category = NULL,
                               #' @field question_type The type of the question
-                              question_type = NULL,
+                              question_type = NULL
                             )
 )
