@@ -36,15 +36,15 @@ parse_category <- function(line){
     return(m[2])
   }
 }
-# line = "$CATEGORY: tom/dick/harry"
-#parse_category(raw_text)
+
 
 GIFTQuestion <- function(){
   (parcr::zero_or_one(GIFTQuestionTitle()) %using%
      \(x) c(category = parcr::retrieve("current_category"), title = x)) %then%
     (GIFTQuestionText() %using%
        \(x) c(text = x)) %then%
-    GIFTQuestionAnswers()
+    GIFTQuestionAnswers() %then%
+    (parcr::zero_or_one(GIFTQuestionFeedback()))
 }
 #' @importFrom parcr `%thenx%` `%xthen%`
 GIFTQuestionAnswers <- function(){
@@ -161,4 +161,18 @@ parse_question_text <- function(line){
 
 GIFTQuestionText <- function() {
   parcr::match_s(parse_question_text)
+}
+
+GIFTQuestionFeedback <- function() {
+  parcr::match_s(parse_question_feedback) %using%
+    \(x) c(question_feedback = x)
+}
+
+parse_question_feedback <- function(line){
+  m <- stringr::str_match(line, "^####(.*)$")
+  if (is.na(m[1])) {
+    return(list()) # signal failure: not a feedback
+  } else {
+    return(m[2])
+  }
 }

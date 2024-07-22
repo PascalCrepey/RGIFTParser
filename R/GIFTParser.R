@@ -14,7 +14,7 @@ GIFTParser <- function(text, debug = FALSE){
   text = gsub("\n", " ", text)
   text = gsub("(::[^:]+::)", "\n\\1\n", text)
   #here we use R raw text format r"()" to avoid double escaping
-  text = gsub(r"((\{|\}|(?<!\\)=|~))", "\n\\1", x = text, perl = TRUE)
+  text = gsub(r"((\{|\}|(?<!\\)=|~|(?:####)))", "\n\\1", x = text, perl = TRUE)
   text = gsub("\\$CATEGORY", "\n\\$CATEGORY", text)
   #remove trailing and leading whitespace (before and after \n)
   text = gsub("\n\\s+", "\n", text) |> gsub("\\s+\n", "\n", x = _) |>

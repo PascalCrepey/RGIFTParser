@@ -19,6 +19,18 @@ test_that("Question text",{
   expect_equal(GIFTQuestionText()(raw)$L[[1]], "[html]Pendant la dernière semaine du mois de septembre 2007, 90 personnes d’un petit village :")
 })
 
+test_that("Single question", {
+  raw = "What is the capital of France? { =Paris#Good answer ! }
+  ####A nice city !"
+  res = GIFTParser(raw)
+  expect_equal(res$R, list())
+  expect_equal(res$L[[1]]$title, NULL)
+  expect_equal(res$L[[1]]$text, "What is the capital of France?")
+  expect_equal(res$L[[1]]$answers[[1]]$feedback, "Good answer !")
+  expect_equal(res$L[[1]]$answers[[1]]$answer, "Paris")
+  expect_equal(res$L[[1]]$question_feedback, "A nice city !")
+
+})
 test_that("Whole GIFT file", {
   #read the GIFT file
   text = readLines(system.file("extdata/test.gift", package = "RGIFTParser"))
