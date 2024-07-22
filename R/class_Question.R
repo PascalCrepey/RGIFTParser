@@ -16,13 +16,14 @@ Question <- R6::R6Class("Question",
                                 private$id = paste(sample(c(0:9, letters, LETTERS), 32, replace = TRUE), collapse = "")
 
                                 if(!is.null(data) && is.list(data)){
-                                  private$title = data$title
-                                  private$question_type = data$question_type
-                                  private$question_feedback = data$question_feedback
-                                  private$text = data$text
-                                  private$answers = private$build_answers(data$answers)
+                                  private$load_data(data)
                                 }
                                 invisible(self)
+                              },
+
+                              import_gift = function(string){
+                                res = GIFTParser(string)
+
                               },
 
                               #' @description
@@ -91,6 +92,14 @@ Question <- R6::R6Class("Question",
                               Answer$new(answer)
                             })
                             return(answers)
+                          },
+                          load_data = function(data) {
+                            private$title <- data$title
+                            private$text <- data$text
+                            private$category <- data$category
+                            private$question_type <- data$question_type
+                            private$question_feedback <- data$question_feedback
+                            private$answers <- private$build_answers(data$answers)
                           }
                         )
 )

@@ -34,7 +34,7 @@ GIFTParser <- function(text, debug = FALSE){
     res = qcms()(vec_text)
   }
 
-  return(res)
+  return(res$L)
 }
 
 

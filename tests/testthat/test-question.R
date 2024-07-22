@@ -3,10 +3,10 @@ test_that("building a question object", {
   ####A nice city !"
   res = GIFTParser(raw)
 
-  q = Question$new(res$L[[1]])
+  q = Question$new(res[[1]])
   expect_true("R6" %in% class(q))
   expect_true("Question" %in% class(q))
-
+  expect_snapshot(print(q))
 })
 
 test_that("building a complex question object", {
@@ -23,8 +23,9 @@ test_that("building a complex question object", {
   ####Question issue du cours IDEA"
   res = GIFTParser(raw)
 
-  q = Question$new(res$L[[1]])
+  q = Question$new(res[[1]])
   expect_true("R6" %in% class(q))
   expect_true("Question" %in% class(q))
+  expect_snapshot(print(q))
 
 })
