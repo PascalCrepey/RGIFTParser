@@ -9,22 +9,27 @@ Question <- R6::R6Class("Question",
                             public = list(
                               #' @description
                               #' This function initializes the question with a title
-                              #' @param title The title of the question
+                              #' @param data A list containing the data of the question
                               #' @return The question object
-                              initialize = function(title) {
-                                private$title <- title
+                              initialize = function(data) {
                                 #generate a random 32 characters id for the question
                                 private$id = paste(sample(c(0:9, letters, LETTERS), 32, replace = TRUE), collapse = "")
+
+                                if(!is.null(data) && is.list(data)){
+                                  private$title = data$title
+                                  private$question_type = data$question_type
+                                  private$question_feedback = data$question_feedback
+                                  private$text = data$text
+                                  private$answers = private$build_answers(data$answers)
+                                }
+                                invisible(self)
                               },
+
                               #' @description
                               #' This function returns the question as a list
                               #' @return A list representation of the question
-                              export = function() {
-                                list(
-                                  id = private$id,
-                                  text = private$title,
-                                  category = private$question_type
-                                )
+                              export_gift = function() {
+
                               },
                               #' @description
                               #' This function imports a question from a list
@@ -33,17 +38,59 @@ Question <- R6::R6Class("Question",
                               import = function(data) {
                                 private$id <- data$id
                                 private$title <- data$text
-                                private$question_type <- data$category
-                              }
-                            ),
+                                private$category <- data$category
 
-                            private = list(
-                              id = NULL,
-                              title = NULL,
-                              text = NULL,
-                              category = NULL,
-                              question_type = NULL,
-                              question_feedback = NULL,
-                              answers = NULL
+                                invisible(self)
+                              },
+                              #' @description
+                              #'
+                              print = function() {
+                                cat("Question: ")
+                                if(!is.null(private$title)) cat(private$title)
+                                if(!is.null(private$category)) cat(" (", private$category, ")")
+                                cat("\n", private$text, "\n")
+                                cat("Answers: \n")
+                                for (answer in private$answers) {
+                                  cat("\t")
+                                  answer$print()
+                                }
+                                cat("Feedback: ", private$question_feedback, "\n")
+                              }
+
+                            ),
+                        active = list(
+                          #' @description
+                          #' This function returns the question as a list
+                          #' @return A list representation of the question
+                          #' @export
+                          #'
+                          list = function() {
+                            list(
+                              id = private$id,
+                              category = private$category,
+                              title = private$title,
+                              text = private$text,
+                              answers = lapply(private$answers, function(answer) {
+                                answer$list
+                              }),
+                              question_feedback = private$question_feedback,
                             )
+                          }
+                        ),
+
+                        private = list(
+                          id = NULL,
+                          title = NULL,
+                          text = NULL,
+                          category = NULL,
+                          question_type = NULL,
+                          question_feedback = NULL,
+                          answers = NULL,
+                          build_answers = function(answers) {
+                            answers <- lapply(answers, function(answer) {
+                              Answer$new(answer)
+                            })
+                            return(answers)
+                          }
+                        )
 )
