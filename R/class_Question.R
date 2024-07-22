@@ -42,6 +42,8 @@ Question <- R6::R6Class("Question",
                               title = NULL,
                               text = NULL,
                               category = NULL,
-                              question_type = NULL
+                              question_type = NULL,
+                              question_feedback = NULL,
+                              answers = NULL
                             )
 )
