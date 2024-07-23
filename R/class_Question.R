@@ -20,10 +20,17 @@ Question <- R6::R6Class("Question",
                                 }
                                 invisible(self)
                               },
-
+                              #' @description
+                              #' This function imports a question from a string
+                              #' @param string A string containing the question data in GIFT format
+                              #' @return The question object
                               import_gift = function(string){
                                 res = GIFTParser(string)
+                                if(length(res) > 1) warning("Only the first question will be imported")
+                                if(length(res) == 0) stop("No question found in the string")
 
+                                private$load_data(res[[1]])
+                                invisible(self)
                               },
 
                               #' @description
