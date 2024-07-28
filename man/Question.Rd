@@ -10,9 +10,10 @@ This class represents a question. It has a title, a text, a category and a type.
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-Question-new}{\code{Question$new()}}
-\item \href{#method-Question-build_answers}{\code{Question$build_answers()}}
-\item \href{#method-Question-export}{\code{Question$export()}}
+\item \href{#method-Question-import_gift}{\code{Question$import_gift()}}
+\item \href{#method-Question-export_gift}{\code{Question$export_gift()}}
 \item \href{#method-Question-import}{\code{Question$import()}}
+\item \href{#method-Question-print}{\code{Question$print()}}
 \item \href{#method-Question-clone}{\code{Question$clone()}}
 }
 }
@@ -37,21 +38,32 @@ The question object
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Question-build_answers"></a>}}
-\if{latex}{\out{\hypertarget{method-Question-build_answers}{}}}
-\subsection{Method \code{build_answers()}}{
+\if{html}{\out{<a id="method-Question-import_gift"></a>}}
+\if{latex}{\out{\hypertarget{method-Question-import_gift}{}}}
+\subsection{Method \code{import_gift()}}{
+This function imports a question from a string
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Question$build_answers(answers)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Question$import_gift(string)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{string}}{A string containing the question data in GIFT format}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The question object
+}
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Question-export"></a>}}
-\if{latex}{\out{\hypertarget{method-Question-export}{}}}
-\subsection{Method \code{export()}}{
+\if{html}{\out{<a id="method-Question-export_gift"></a>}}
+\if{latex}{\out{\hypertarget{method-Question-export_gift}{}}}
+\subsection{Method \code{export_gift()}}{
 This function returns the question as a list
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Question$export()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Question$export_gift()}\if{html}{\out{</div>}}
 }
 
 \subsection{Returns}{
@@ -77,6 +89,15 @@ This function imports a question from a list
 \subsection{Returns}{
 The question object
 }
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Question-print"></a>}}
+\if{latex}{\out{\hypertarget{method-Question-print}{}}}
+\subsection{Method \code{print()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Question$print()}\if{html}{\out{</div>}}
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Question-clone"></a>}}

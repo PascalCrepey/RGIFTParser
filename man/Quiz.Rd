@@ -25,8 +25,9 @@ directly using a GIFT file with the import_gift method.
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-Quiz-new}{\code{Quiz$new()}}
-\item \href{#method-Quiz-add_question}{\code{Quiz$add_question()}}
 \item \href{#method-Quiz-import_gift}{\code{Quiz$import_gift()}}
+\item \href{#method-Quiz-import}{\code{Quiz$import()}}
+\item \href{#method-Quiz-print}{\code{Quiz$print()}}
 \item \href{#method-Quiz-clone}{\code{Quiz$clone()}}
 }
 }
@@ -36,28 +37,18 @@ directly using a GIFT file with the import_gift method.
 \subsection{Method \code{new()}}{
 This function initializes the Quiz object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Quiz$new()}\if{html}{\out{</div>}}
-}
-
-\subsection{Returns}{
-The Quiz object
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Quiz-add_question"></a>}}
-\if{latex}{\out{\hypertarget{method-Quiz-add_question}{}}}
-\subsection{Method \code{add_question()}}{
-This function adds a question to the Quiz object
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Quiz$add_question(question)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Quiz$new(data)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{question}}{The question to add}
+\item{\code{data}}{A list containing the data of the Quiz}
 }
 \if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The Quiz object
 }
 }
 \if{html}{\out{<hr>}}
@@ -76,6 +67,36 @@ This function imports a GIFT formatted text into the Quiz object
 }
 \if{html}{\out{</div>}}
 }
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Quiz-import"></a>}}
+\if{latex}{\out{\hypertarget{method-Quiz-import}{}}}
+\subsection{Method \code{import()}}{
+This function imports a list of questions into the Quiz object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Quiz$import(data)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{data}}{A list containing the questions data}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The Quiz object
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Quiz-print"></a>}}
+\if{latex}{\out{\hypertarget{method-Quiz-print}{}}}
+\subsection{Method \code{print()}}{
+This function prints the Quiz object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Quiz$print()}\if{html}{\out{</div>}}
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Quiz-clone"></a>}}

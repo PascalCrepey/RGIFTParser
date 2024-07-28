@@ -11,6 +11,8 @@ GIFTParser <- function(text, debug = FALSE){
   if(length(text) > 1) {
     text = paste(text, collapse = "")
   }
+  #remove comments indicated by // to the end of the line
+  text = gsub("//.*\n", "", text, perl = TRUE)
   text = gsub("\n", " ", text)
   text = gsub("(::[^:]+::)", "\n\\1\n", text)
   #here we use R raw text format r"()" to avoid double escaping

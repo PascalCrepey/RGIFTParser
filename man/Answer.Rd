@@ -10,6 +10,7 @@ This class represents an answer.
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-Answer-new}{\code{Answer$new()}}
+\item \href{#method-Answer-print}{\code{Answer$print()}}
 \item \href{#method-Answer-clone}{\code{Answer$clone()}}
 }
 }
@@ -32,6 +33,15 @@ This function initializes the answer
 \subsection{Returns}{
 The answer object
 }
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Answer-print"></a>}}
+\if{latex}{\out{\hypertarget{method-Answer-print}{}}}
+\subsection{Method \code{print()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Answer$print()}\if{html}{\out{</div>}}
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Answer-clone"></a>}}
