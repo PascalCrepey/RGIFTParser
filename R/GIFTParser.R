@@ -13,8 +13,15 @@ GIFTParser <- function(text, debug = FALSE){
   }
   #remove comments indicated by // to the end of the line
   text = gsub("//.*\n", "", text, perl = TRUE)
+  ## the parcr works needs to have primary elements on new lines
+  ## so we pre-process the text to ensure that the right elements are on new lines
+  #first we remove all new lines
   text = gsub("\n", " ", text)
+  ## then we add new lines before and/or after the primary elements
+  # new lines for question titles
   text = gsub("(::[^:]+::)", "\n\\1\n", text)
+  # new lines for #, = and ~ when they are within {} and not escaped
+  text = gsub(r"((\{[^\\]+?)(#|~|(?<!\\)=))", "\\1\n", text, perl = TRUE)
   #here we use R raw text format r"()" to avoid double escaping
   text = gsub(r"((\{|\}|(?<!\\)=|~|(?:####)))", "\n\\1", x = text, perl = TRUE)
   text = gsub("\\$CATEGORY", "\n\\$CATEGORY", text)
@@ -26,7 +33,7 @@ GIFTParser <- function(text, debug = FALSE){
 
   # store "No category" as the current category
   parcr::store("current_category", "No category")
- # browser()
+
   if(debug){
     parcr::store("debug", TRUE)
     print(vec_text)
