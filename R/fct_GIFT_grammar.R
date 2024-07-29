@@ -1,5 +1,5 @@
 #' @importFrom parcr `%then%`
-qcms <- function(){
+GIFTBank <- function(){
   parcr::one_or_more(GIFTBlock()) %then% parcr::eof()
 }
 
@@ -27,137 +27,59 @@ GIFTCategory <- function(){
     }
 }
 
-#reporter(GIFTCategory())(text)
-parse_category <- function(line){
-  m <- stringr::str_match(line, "^\\$CATEGORY: ([\\w\\W*]+)$")
-  if (is.na(m[1])) {
-    return(list()) # signal failure: not a title
-  } else {
-    return(m[2])
-  }
-}
-
 
 GIFTQuestion <- function(){
   (parcr::zero_or_one(GIFTQuestionTitle()) %using%
-     \(x) c(category = parcr::retrieve("current_category"), title = x)) %then%
+     \(x) {
+       #question_type = parcr::retrieve("current_question_type")
+       #reset question type
+       parcr::store("current_question_type" , NULL)
+       c(category = parcr::retrieve("current_category"), title = x)
+    })%then%
     (GIFTQuestionText() %using%
        \(x) c(text = x)) %then%
-    GIFTQuestionAnswers() %then%
+    (GIFTQuestionAnswers() %using% \(x) {
+      question_type = parcr::retrieve("current_question_type")
+      c(question_type = question_type, x)
+      }) %then%
+    (parcr::zero_or_one(GIFTQuestionText()) %using%
+       \(x) c(suffix_text = x)) %then%
     (parcr::zero_or_one(GIFTQuestionFeedback()))
 }
+
 #' @importFrom parcr `%thenx%` `%xthen%`
 GIFTQuestionAnswers <- function(){
   parcr::literal("{") %thenx%
-    parcr::one_or_more(GIFTAnswer()) %xthen%
-    parcr::literal("}") %using% function(x) list(answers = x)
+    splitAnswers() %thenx%
+    parcr::zero_or_more(GIFTAnswer()) %xthen%
+    parcr::literal("}") %using% \(x) list(answers = x)
+}
+
+#within the curly braces, we split the answers
+#we cannot do it before because we run the risk of adding new lines in question text
+splitAnswers <-function(){
+  function(x){
+    r_end = x[-1]
+    #remove spaces between # and = if any in case of numeric question
+    x[1] = gsub("#\\s+=", "#=", x[1])
+    #add a negative lookahead to avoid splitting the answer if it is a number
+    new_r1 = gsub("(#?=|~)", "\n\\1",x[1])
+    r_beg = strsplit(trimws(new_r1), "\n")[[1]]
+    if(parcr::retrieve("debug")) message("Splitted answers: ", paste0(r_beg, collapse = "(NL)"))
+    return(list(R=c(r_beg, r_end)))
+  }
 }
 
 GIFTAnswer <- function(){
-  parcr::match_s(parse_whole_answer) %using% function(x) list(x)
+  parcr::match_s(parse_whole_answer) %using% \(x) list(x)
 }
 
-parse_whole_answer <- function(x) {
-  #first get the operator
-  operator = parse_operator(x)
-  #then get the weight (if there is one)
-  weight = parse_weight(x)
-  #then get the answer
-  answer = parse_answer(x)
-  #then get the feedback (if there is one)
-  feedback = parse_feedback(x)
-
-  #if no operator or no answer then returns list()
-  if(is.null(operator) || is.null(answer)){
-    return(list())
-  }else{
-    res = paste(operator, ":", weight, ":", answer, ":", feedback)
-    if(parcr::retrieve("debug")) message("Answer: ", res)
-    return(list(operator = operator,
-                weight = weight,
-                answer = answer,
-                feedback = feedback))
-  }
-}
-#parses operator = or ~ with potential space before
-parse_operator <-function(line){
-  m <- stringr::str_match(line, "^\\s*(=|~)")
-  if (is.na(m[1])) {
-    return(NULL) # signal failure: not an operator
-  } else {
-    return(m[2])
-  }
-}
-# parse_operator(" =")
-# parse_operator("\t ~sfsf")
-# parse_operator("\t ::toei")
-#parses weight either positive or negative decimal or integer number
-parse_weight <-function(line){
-  m <- stringr::str_match(line, "^\\s*(?:=|~)%(\\-?\\d*(?:.|\\,)?\\d*)%")
-  if (is.na(m[1])) {
-    return(NULL) # signal failure: not a weight
-  } else {
-    return(as.numeric(sub(",",".",m[2])))
-  }
-}
-# line = " =%50%"
-# stringr::str_match(line, "^\\s*(?:=|~)%(\\-?\\d*(?:.|,)?\\d*)%")
-# parse_weight(" =%50%")
-# parse_weight(" ~%-50%")
-# parse_weight(" ~%-33.33%")
-# parse_weight(" ~%-33,33%")
-# parse_weight("\t ~sfsf")
-# parse_weight("\t ::toei")
-
-#parses answer text
-parse_answer <-function(line){
-  m <- stringr::str_match(line, "^\\s*(?:=|~)(?:%\\-?\\d*(?:.|\\,)?\\d*%)?\\s*([^#]+)\\#*")
-  if (is.na(m[1])) {
-    return(NULL) # signal failure: not an answer
-  } else {
-    return(m[2])
-  }
-}
-
-# parse_answer(" =%50% ceci est une réponse")
-# parse_answer(" =%50% ceci est une réponse # ceci est un feedback")
-
-
-#parses feedback text
-parse_feedback <-function(line){
-  m <- stringr::str_match(line, "^.*\\#(.*)$")
-  if (is.na(m[1])) {
-    return(NULL) # signal failure: not a feedback
-  } else {
-    return(m[2])
-  }
-}
-# parse_feedback(" =%50% ceci est une réponse # ceci est un feedback")
-# parse_feedback(" =%50% ceci est une réponse ")
-
-parse_title <- function(line){
-  m <- stringr::str_match(line, "^::([:print:]+)::")
-  if (is.na(m[1])) {
-    return(list()) # signal failure: not a title
-  } else {
-    return(m[2])
-  }
-}
-# test_title = "::AI-taux_attaque"
-# parse_title(test_title)
 
 GIFTQuestionTitle <- function() {
   parcr::match_s(parse_title)
 }
 
-parse_question_text <- function(line){
-  m <- stringr::str_match(line, "([:print:]+)")
-  if (is.na(m[1])) {
-    return(list()) # signal failure: not a text
-  } else {
-    return(m[2])
-  }
-}
+
 
 GIFTQuestionText <- function() {
   parcr::match_s(parse_question_text)
@@ -166,13 +88,4 @@ GIFTQuestionText <- function() {
 GIFTQuestionFeedback <- function() {
   parcr::match_s(parse_question_feedback) %using%
     \(x) c(question_feedback = x)
-}
-
-parse_question_feedback <- function(line){
-  m <- stringr::str_match(line, "^####(.*)$")
-  if (is.na(m[1])) {
-    return(list()) # signal failure: not a feedback
-  } else {
-    return(m[2])
-  }
 }

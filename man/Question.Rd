@@ -6,6 +6,13 @@
 \description{
 This class represents a question. It has a title, a text, a category and a type.
 }
+\section{Active bindings}{
+\if{html}{\out{<div class="r6-active-bindings">}}
+\describe{
+\item{\code{list}}{returns the question as a list}
+}
+\if{html}{\out{</div>}}
+}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
@@ -94,6 +101,7 @@ The question object
 \if{html}{\out{<a id="method-Question-print"></a>}}
 \if{latex}{\out{\hypertarget{method-Question-print}{}}}
 \subsection{Method \code{print()}}{
+This function prints the question
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Question$print()}\if{html}{\out{</div>}}
 }

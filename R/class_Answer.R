@@ -19,6 +19,8 @@ Answer <- R6::R6Class("Answer",
                             private$correct = ifelse(data$operator == "=", TRUE, FALSE)
                             private$feedback = data$feedback
                           },
+                          #' @description
+                          #' this function prints the answer
                           print = function() {
                             cat(private$answer)
                             if(!is.null(private$weight)) {
@@ -39,10 +41,7 @@ Answer <- R6::R6Class("Answer",
                           }
                         ),
                       active = list(
-                        #' @description
-                        #' This function returns the answer as a list
-                        #' @return The answer as a list
-                        #'
+                        #' @field list returns the answer as a list
                         list = function() {
                           return(list(
                             id = private$id,

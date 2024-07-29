@@ -13,17 +13,18 @@ GIFTParser <- function(text, debug = FALSE){
   }
   #remove comments indicated by // to the end of the line
   text = gsub("//.*\n", "", text, perl = TRUE)
-  ## the parcr works needs to have primary elements on new lines
+  ## the parcr package needs to have primary elements on new lines
   ## so we pre-process the text to ensure that the right elements are on new lines
   #first we remove all new lines
   text = gsub("\n", " ", text)
   ## then we add new lines before and/or after the primary elements
   # new lines for question titles
   text = gsub("(::[^:]+::)", "\n\\1\n", text)
-  # new lines for #, = and ~ when they are within {} and not escaped
-  text = gsub(r"((\{[^\\]+?)(#|~|(?<!\\)=))", "\\1\n", text, perl = TRUE)
   #here we use R raw text format r"()" to avoid double escaping
-  text = gsub(r"((\{|\}|(?<!\\)=|~|(?:####)))", "\n\\1", x = text, perl = TRUE)
+  #new lines for answers { and }
+  text = gsub(r"((\{|\}))", "\n\\1\n", x = text, perl = TRUE)
+  #new line for general feedback
+  text = gsub("(####)", "\n\\1", x = text)
   text = gsub("\\$CATEGORY", "\n\\$CATEGORY", text)
   #remove trailing and leading whitespace (before and after \n)
   text = gsub("\n\\s+", "\n", text) |> gsub("\\s+\n", "\n", x = _) |>
@@ -37,10 +38,10 @@ GIFTParser <- function(text, debug = FALSE){
   if(debug){
     parcr::store("debug", TRUE)
     print(vec_text)
-    res = parcr::reporter(qcms())(vec_text)
+    res = parcr::reporter(GIFTBank())(vec_text)
   }else{
     parcr::store("debug", FALSE)
-    res = qcms()(vec_text)
+    res = GIFTBank()(vec_text)
   }
 
   return(res$L)

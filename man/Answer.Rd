@@ -6,6 +6,13 @@
 \description{
 This class represents an answer.
 }
+\section{Active bindings}{
+\if{html}{\out{<div class="r6-active-bindings">}}
+\describe{
+\item{\code{list}}{returns the answer as a list}
+}
+\if{html}{\out{</div>}}
+}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
@@ -38,6 +45,7 @@ The answer object
 \if{html}{\out{<a id="method-Answer-print"></a>}}
 \if{latex}{\out{\hypertarget{method-Answer-print}{}}}
 \subsection{Method \code{print()}}{
+this function prints the answer
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Answer$print()}\if{html}{\out{</div>}}
 }

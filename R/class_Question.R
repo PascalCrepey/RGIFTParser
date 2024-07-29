@@ -51,7 +51,7 @@ Question <- R6::R6Class("Question",
                                 invisible(self)
                               },
                               #' @description
-                              #'
+                              #' This function prints the question
                               print = function() {
                                 cat("Question: ")
                                 if(!is.null(private$title)) cat(private$title)
@@ -67,11 +67,7 @@ Question <- R6::R6Class("Question",
 
                             ),
                         active = list(
-                          #' @description
-                          #' This function returns the question as a list
-                          #' @return A list representation of the question
-                          #' @export
-                          #'
+                          #' @field list returns the question as a list
                           list = function() {
                             list(
                               id = private$id,
