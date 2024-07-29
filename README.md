@@ -14,7 +14,8 @@ coverage](https://codecov.io/gh/PascalCrepey/RGIFTParser/branch/main/graph/badge
 
 The goal of RGIFTParser is to provide a parser for the GIFT format. The
 GIFT format is a simple and flexible way to create quizzes. It is used
-by the Moodle platform. The parser is based on the parcr package.
+by the Moodle platform. The parser is using the
+[parcr](https://github.com/SystemsBioinformatics/parcr) package.
 
 ## Installation
 
@@ -75,7 +76,34 @@ my_quiz = Quiz$new(questions_gift)
 
 my_quiz
 #> Quiz: 
-#> Quiz containing  0  question
+#> Question: Question 1 ( No category )
+#>  Which planet is known as the Red Planet? 
+#> Answers: 
+#>  Mars (True:  Correct! Mars is known as the Red Planet due to its reddish appearance.      )
+#>  Earth (False:  Incorrect. Earth is known as the Blue Planet.      )
+#>  Venus (False:  Incorrect. Venus is often called Earth's twin but not the Red Planet.      )
+#>  Jupiter (False:  Incorrect. Jupiter is the largest planet in our solar system.      )
+#>  Saturn (False:  Incorrect. Saturn is known for its prominent ring system. )
+#> Feedback:  
+#> Question: Question 2 ( No category )
+#>  What is the capital of France? 
+#> Answers: 
+#>  Paris (True:  Correct! Paris is the capital of France.      )
+#>  London (False:  Incorrect. London is the capital of the United Kingdom.      )
+#>  Berlin (False:  Incorrect. Berlin is the capital of Germany.      )
+#>  Madrid (False:  Incorrect. Madrid is the capital of Spain.      )
+#>  Rome (False:  Incorrect. Rome is the capital of Italy. )
+#> Feedback:  
+#> Question: Question 3 ( No category )
+#>  What is the chemical symbol for gold? 
+#> Answers: 
+#>  Au (True:  Correct! Au is the chemical symbol for gold, derived from its Latin name 'Aurum'.      )
+#>  Ag (False:  Incorrect. Ag is the chemical symbol for silver.      )
+#>  Fe (False:  Incorrect. Fe is the chemical symbol for iron.      )
+#>  Pb (False:  Incorrect. Pb is the chemical symbol for lead.      )
+#>  Hg (False:  Incorrect. Hg is the chemical symbol for mercury. )
+#> Feedback:  
+#> Quiz containing  3  questions
 ```
 
 If you prefer a simple list format instead of the R6 objects (Quiz,
@@ -86,4 +114,7 @@ Question, Answer), you can use the `GIFTParser` function:
 questions = GIFTParser(questions_gift)
 
 invisible(lapply(questions, function(x) cat(x$title, ": ", x$text, "\n")))
+#> Question 1 :  Which planet is known as the Red Planet? 
+#> Question 2 :  What is the capital of France? 
+#> Question 3 :  What is the chemical symbol for gold?
 ```

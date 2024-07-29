@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/PascalCrepey/RGIFTParser/branch/main/graph/badge.svg)](https://app.codecov.io/gh/PascalCrepey/RGIFTParser?branch=main)
 <!-- badges: end -->
 
-The goal of RGIFTParser is to provide a parser for the GIFT format. The GIFT format is a simple and flexible way to create quizzes. It is used by the Moodle platform. The parser is based on the parcr package.
+The goal of RGIFTParser is to provide a parser for the GIFT format. The GIFT format is a simple and flexible way to create quizzes. It is used by the Moodle platform. The parser is using the [parcr](https://github.com/SystemsBioinformatics/parcr) package.
 
 ## Installation
 
