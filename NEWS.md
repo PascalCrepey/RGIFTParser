@@ -1,3 +1,7 @@
+# RGIFTParser 0.3.1
+
+* Added support for loading Quiz directly from files
+
 # RGIFTParser 0.3.0
 
 * Added support for parsing all types of GIFT questions
