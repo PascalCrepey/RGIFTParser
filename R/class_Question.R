@@ -62,7 +62,8 @@ Question <- R6::R6Class("Question",
                                   cat("\t")
                                   answer$print()
                                 }
-                                cat("Feedback: ", private$question_feedback, "\n")
+                                if(!is.null(private$question_feedback))
+                                  cat("Feedback: ", private$question_feedback, "\n")
                               }
 
                             ),

@@ -55,7 +55,6 @@
       	14,3%	 (False)
       	40,0%	 (True)
       	l’information donnée ne permet pas de calculer le taux d’attaque (False)
-      Feedback:  
       Question: AI-risque_relatif ( IDEA/Alerte-Investigation )
        [html]Un questionnaire a été administré à tous les participants d’un diner dont certains participants sont malades. Il apparait que 30 malades et 20 non-malades ont consommé de la salade piémontaise tandis que 2 malades et 34 non-malades n’en ont pas consommé. Quel est le risque relatif d’être malade si l’on a consommé cette salade ? 
       Answers: 
@@ -64,7 +63,6 @@
       	4,0	 (True)
       	5,5	 (False)
       	8,3 (False)
-      Feedback:  
       Question: AI-PR-definition_cas ( IDEA/Alerte-Investigation )
        [html] Lors d’une épidémie de rougeole survenue en juin 2008 dans une école privée de Bretagne Nord, la définition de cas suivante a été adoptée \: tout enfant de l’école ayant présenté, en juin 2008, une fièvre supérieure à 38°5C et une éruption maculo-papuleuse et des anticorps IgM anti rougeole élevés dans le sérum. Cette définition est \: 
       Answers: 
@@ -73,7 +71,6 @@
       	pénible	 (False)
       	sensible	 (False)
       	prédictive (False)
-      Feedback:  
       Question: AI-types_signaux ( IDEA/Alerte-Investigation )
        Quels types de signaux alimentent le dispositif de veille sanitaire ? 
       Answers: 
@@ -82,7 +79,6 @@
       	Les évènements ou information repérées dans la presse scientifique, les réseaux de veille internationaux ou les médias (True [ 33.33333 %])
       	Les relevés d’écoutes téléphoniques (False [ -50 %])
       	Les données de recensement de l’INSEE (False [ -50 %])
-      Feedback:  
       Question: AI-alerte_sanitaire ( IDEA/Alerte-Investigation )
        Quand considère-t-on qu’un signal reçu par la veille sanitaire devient une alerte sanitaire ? 
       Answers: 
@@ -91,7 +87,6 @@
       	Quand le signal est validé pour son impact sanitaire potentiel ou avéré (False)
       	Quand le signal est vérifié et validé pour son impact sanitaire potentiel ou avéré (True)
       	Quand le signal est inhabituel (False)
-      Feedback:  
       Question: AI-actions_signal ( IDEA/Alerte-Investigation )
        Vous recevez au point focal de l’ARS, le message d’un maire signalant la survenue de trois cas de leucémies dans sa commune située à côté d’une centrale nucléaire. Quelles sont vos premières actions ? 
       Answers: 
@@ -100,7 +95,6 @@
       	Vous rappelez le maire pour compléter la fiche de signalement (True [ 33.33333 %])
       	Vous rassemblez des informations auprès des professionnels de santé concernés afin d’obtenir la confirmation du diagnostic médical de ces trois cas de leucémies (True [ 33.33333 %])
       	Vous prévenez la presse pour qu’elle alerte la population (False [ -50 %])
-      Feedback:  
       Question: Schema-PR-transversale ( IDEA/Alerte-Investigation )
        [html]Une enquête transversale est menée, au mois de juin, dans la région Auvergne où un dépistage est réalisé chez des sujets choisis aléatoirement. Parmi les 5 000 sujets inclus dans l’enquête, 250 présentent un diabète. La proportion 250/5 000 représente \: 
       Answers: 
@@ -109,7 +103,6 @@
       	la densité d’incidence	 (False)
       	la prévalence	 (True)
       	la létalité (False)
-      Feedback:  
       Question: Schema-PR-prevalence ( IDEA/Alerte-Investigation )
        [html]Snowtown est une communauté de 200 000 personnes. En 1960, on a enregistré 2 000 décès, <u>toutes</u> causes réunies. En 1960, 600 cas de tuberculose ont été recensés dont 400 hommes et 200 femmes. Pendant la même année, 120 décès dus à la tuberculose ont été rapportés dont 100 hommes. Quelle est la prévalence de la tuberculose en 1960 ? 
       Answers: 
@@ -118,7 +111,6 @@
       	30 pour 1 000	 (False)
       	60 pour 1 000	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-PR-mortalite_brut ( IDEA/Alerte-Investigation )
        [html] Snowtown est une communauté de 200 000 personnes. En 1960, on a enregistré 2 000 décès, <u>toutes</u> causes réunies. En 1960, 600 cas de tuberculose ont été recensés dont 400 hommes et 200 femmes. Pendant la même année, 120 décès dus à la tuberculose ont été rapportés dont 100 hommes. <br />Quel est le taux de mortalité brut en 1960? 
       Answers: 
@@ -127,7 +119,6 @@
       	10 pour 1 000	 (True)
       	100 pour 1 000	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-mortalite_prop ( IDEA/Alerte-Investigation )
        [html]Snowtown est une communauté de 200 000 personnes. En 1960, on a enregistré 2 000 décès, toutes causes réunies. En 1960, 600 cas de tuberculose ont été recensés dont 400 hommes et 200 femmes. Pendant la même année, 120 décès dus à la tuberculose ont été rapportés dont 100 hommes.<br/>Quelle est la mortalité proportionnelle due à la tuberculose ? 
       Answers: 
@@ -136,7 +127,6 @@
       	20 pour 100	 (False)
       	30 pour 100	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-letalite ( IDEA/Alerte-Investigation )
        [html]Snowtown est une communauté de 200 000 personnes. En 1960, on a enregistré 2 000 décès, toutes causes réunies. En 1960, 600 cas de tuberculose ont été recensés dont 400 hommes et 200 femmes. Pendant la même année, 120 décès dus à la tuberculose ont été rapportés dont 100 hommes.<br/>Quelle est la létalité de la tuberculose chez les hommes ?<br/> 
       Answers: 
@@ -145,7 +135,6 @@
       	20 pour 100	 (False)
       	2 pour 100	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-PR-def_epi ( IDEA/Alerte-Investigation )
        [html]Dans la définition d’épidémiologie, les termes « distribution » et « déterminants » se rapportent à \: 
       Answers: 
@@ -154,7 +143,6 @@
       	fréquences, caractéristiques et causes des phénomènes de santé	 (True)
       	services de santé publique et ressources allouées à ceux-ci	 (False)
       	caractéristiques des tests de dépistage (False)
-      Feedback:  
       Question: Schema-PR-def_epi_desc ( IDEA/Alerte-Investigation )
        [html]L’épidémiologie descriptive permet de répondre aux interrogations suivantes SAUF \: 
       Answers: 
@@ -163,7 +151,6 @@
       	pourquoi ?	 (True)
       	quand ?	 (False)
       	où ? (False)
-      Feedback:  
       Question: Schema-PR-Identifier_cas_temoin ( IDEA/Alerte-Investigation )
        [html]Une étude a été réalisée auprès de 150 personnes atteintes d’un cancer de la vessie qui sont comparées à 300 personnes non atteintes de cancer de la vessie et provenant de la même population que les précédentes. L’ensemble des sujets a été interrogé pour déterminer leur exposition antérieure au tabagisme passif. Cette étude est un exemple d’une \: 
       Answers: 
@@ -172,7 +159,6 @@
       	essai clinique	 (False)
       	étude cas-témoin	 (True)
       	étude écologique (False)
-      Feedback:  
       Question: Schema-PR-RR ( IDEA/Alerte-Investigation )
        [html]Dans une étude sur le cancer de la vessie et l’usage du tabac chez les hommes de Snowtown, on obtient les données suivantes \:<br>- chez les hommes fumeurs, le taux de cancer de la vessie est estimé à 69,0 pour 100 000 personnes-années.<br>- chez les hommes non fumeurs, le taux de cancer de la vessie est estimé à 37,4 pour 100 000 personnes-années. <br>Quel est le risque relatif de cancer de la vessie associé au tabagisme ? 
       Answers: 
@@ -181,7 +167,6 @@
       	0,07 %	 (False)
       	0,47	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-Fraction_etio ( IDEA/Alerte-Investigation )
        [html]Dans une étude sur le cancer de la vessie et l’usage du tabac chez les hommes de Snowtown, on obtient les données suivantes \:- chez les hommes fumeurs, le taux de cancer de la vessie est estimé à 69,0 pour 100 000 personnes-années- chez les hommes non fumeurs, le taux de cancer de la vessie est estimé à 37,4 pour 100 000 personnes-années <br>Quelle est la fraction étiologique de cancer de la vessie attribuable à la cigarette chez les fumeurs ? 
       Answers: 
@@ -190,7 +175,6 @@
       	0,46	 (True)
       	46	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-Causalite ( IDEA/Alerte-Investigation )
        [html]Pour affirmer la nature causale d’un facteur de risque dans la survenue d’une maladie, il suffit \: 
       Answers: 
@@ -199,7 +183,6 @@
       	d’observer une association significative entre le facteur de risque et la maladie (p<0,001)	 (False)
       	de savoir si l’exposition à ce facteur est antérieure à la survenue de la maladie	 (False)
       	aucune des réponses proposées (True)
-      Feedback:  
       Question: Schema-PR-Temoins ( IDEA/Alerte-Investigation )
        [html]Dans une étude cas-témoin, un bon groupe témoin doit \: 
       Answers: 
@@ -208,7 +191,6 @@
       	<p>être choisi en fonction de l’exposition</p>	 (False [ -50 %])
       	<p>avoir la possibilité de développer la maladie</p>	 (True [ 50 %])
       	<p>savoir passer le relai !</p> (False)
-      Feedback:  
       Question: Stat-PR-perc_augment ( IDEA/Alerte-Investigation )
        [html]En 2006, 400 cas de rougeole ont été identifiés dans un centre de santé. En 2007, ce nombre est de 475. Quel est le pourcentage d’augmentation du nombre de cas de rougeole? 
       Answers: 
@@ -217,7 +199,6 @@
       	119 %	 (False)
       	16 %	 (False)
       	116 % (False)
-      Feedback:  
       Question: Stat-PR-signif_prevalence ( IDEA/Alerte-Investigation )
        [html]La prévalence d’une maladie a été comparée sur deux échantillons issus d’une population A et d’une population B. Les deux mesures donnent respectivement une prévalence de 27% sur l’échantillon A et de 35% sur l’échantillon B. Le test statistique de comparaison se conclut par l’expression \: p &lt; 0,02. Si alpha \= 5%, cela signifie que \: 
       Answers: 
@@ -226,7 +207,6 @@
       	la différence réelle entre les prévalences des deux populations est inférieure à 2%	 (False [ -33.33333 %])
       	la différence réelle entre les prévalences des deux populations est inférieure à 5%	 (False [ -33.33333 %])
       	il y a moins de 2 chances sur 100 d’observer un tel résultat si les deux populations dont sont issus les deux échantillons ont une prévalence identique (True [ 50 %])
-      Feedback:  
       Question: Stat-PR-distrib ( IDEA/Alerte-Investigation )
        [html]Lors d’une épidémie dans un village A, les cas de rougeole enregistrés parmi les enfants se répartissent selon les âges suivants \:<br>1 an\: 1 cas, 2 ans\: 6 cas, 3 ans\: 4 cas, 4 ans\: 3 cas, 4 ans\: 3 cas, 5 ans\: 1 cas, 8 ans\: 1 cas, 10 ans\: 1 cas, 14 ans\: 1 cas.<br>Quelle est la forme de la distribution ? 
       Answers: 
@@ -235,7 +215,6 @@
       	étirée à gauche	 (False)
       	bi-modale	 (False)
       	aléatoire (False)
-      Feedback:  
       Question: Stat-PR-tendance_centrale ( IDEA/Alerte-Investigation )
        [html]Pour une distribution étirée d’un côté, quelle est la mesure de tendance centrale la plus appropriée ? 
       Answers: 
@@ -244,7 +223,6 @@
       	écart type	 (False)
       	médiane	 (True)
       	mode (False)
-      Feedback:  
       Question: Stat-PR-intervalle ( IDEA/Alerte-Investigation )
        [html]Lors d’un sondage effectué sur un échantillon de 100 sujets représentatif de la population des cyclistes de la ville de Rennes, on constate que 28% d’entre eux portent habituellement un casque. L’intervalle de confiance à 95% est de plus ou moins 6%. Cet intervalle signifie que la proportion de l’ensemble des cyclistes de Rennes portant un casque \: 
       Answers: 
@@ -253,7 +231,6 @@
       	<p>est comprise entre 22% et 34% avec 5% de chance de se tromper</p>	 (True)
       	<p>est supérieure à 22% avec 5% de chance de se tromper</p>	 (False)
       	<p>a 95% de chance d’être égale à 28%</p> (False)
-      Feedback:  
       Question: Stat-graphique ( IDEA/Alerte-Investigation )
        [html]Vous devez présenter les taux d’incidence annuels de tuberculose par catégorie socio professionnelle des cas pour l’année 2009 pour votre pays. Quelle représentation graphique allez vous utiliser ? 
       Answers: 
@@ -262,7 +239,6 @@
       	Saint-Paulin	 (False)
       	Diagramme en barre	 (True)
       	Nuage de points (False)
-      Feedback:  
       Question: Stat-facteur_confusion ( IDEA/Alerte-Investigation )
        [html]Dans une étude cas témoin, pour vérifier l’existence d’une association entre une exposition et une maladie, on étudie l’influence d’un tiers facteur sur cette relation. Parmi les conditions suivantes, quelles sont celles qui doivent être remplies pour que ce facteur soit un facteur de confusion \: 
       Answers: 
@@ -271,7 +247,6 @@
       	les OR calculés dans chaque strate d’exposition au tiers facteur diffèrent entre eux	 (False [ -33.33333 %])
       	l’OR ajusté de Mantel Haenszel est identique à l’OR brut	 (False [ -33.33333 %])
       	l’OR ajusté de Mantel Haenszel est différent de l’OR brut (True [ 50 %])
-      Feedback:  
       Question: Surv-PR-incidence_cumulée ( IDEA/Alerte-Investigation )
        [html]Durant l’année 2007, 3 500 nouveaux cas de rougeole ont été enregistrés par le système de surveillance de la région X qui compte une population de 2 000 000 habitants. Le nombre 3 500/2 000 000 représente \: 
       Answers: 
@@ -280,7 +255,6 @@
       	la spécificité	 (False)
       	la létalité	 (False)
       	l’efficacité vaccinale (False)
-      Feedback:  
       Question: Surv-objectifs ( IDEA/Alerte-Investigation )
        [html]Quels sont les objectifs de la surveillance en santé publique ? 
       Answers: 
@@ -289,7 +263,6 @@
       	éclairer les décisions de santé publique grâce aux données sanitaires	 (True [ 25 %])
       	détecter l’émergence de nouvelles pathologies et la survenue des phénomènes épidémiques	 (True [ 25 %])
       	évaluer les politiques et stratégies de contrôle et de prévention des maladies (True [ 25 %])
-      Feedback:  
       Question: Surv-validation ( IDEA/Alerte-Investigation )
        La validation des données de surveillance...\: 
       Answers: 
@@ -298,7 +271,6 @@
       	...repose sur l’absence d’une définition de cas. (False [ -50 %])
       	...permet de confirmer les cas. (True [ 33.33333 %])
       	...est une étape optionnelle en situation d’urgence. (False [ -50 %])
-      Feedback:  
       Question: Surv-denominateur ( IDEA/Alerte-Investigation )
        La présence d’un dénominateur... \: 
       Answers: 
@@ -307,7 +279,6 @@
       	...facilite la comparaison des populations et des territoires (True [ 33.33333 %])
       	...est systématique dans toutes les données de surveillance (False [ -50 %])
       	...est systématiquement nécessaire pour analyser des données de surveillance. (False [ -50 %])
-      Feedback:  
       Question: Enquete-PR-types ( IDEA/Alerte-Investigation )
        [html]Une enquête est menée dans la montagne Bourbonnaise où un dépistage est réalisé chez des sujets choisis aléatoirement. Parmi les 1500 sujets inclus dans l’enquête, 60 présentent un diabète. Cette enquête est un exemple d’ \: 
       Answers: 
@@ -316,7 +287,6 @@
       	étude transversale	 (True)
       	étude écologique	 (False)
       	essai clinique (False)
-      Feedback:  
       Question: Enquete-depistage ( IDEA/Alerte-Investigation )
        [html]Un test de dépistage du cancer du sein a été effectué chez 600 femmes atteintes d’un cancer du sein (confirmé par biopsie) et chez 600 femmes non atteintes. Les résultats du test ont été positifs chez 150 femmes atteintes d’un cancer et chez 50 femmes non atteintes.Quelle est la sensibilité du test de dépistage ? 
       Answers: 
@@ -325,7 +295,6 @@
       	55 %	 (False)
       	92 %	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Enquete-specificite ( IDEA/Alerte-Investigation )
        [html]Un test de dépistage du cancer du sein a été effectué chez 600 femmes atteintes d’un cancer du sein (confirmé par biopsie) et chez 600 femmes non atteintes. Les résultats du test ont été positifs chez 150 femmes atteintes d’un cancer et chez 50 femmes non atteintes.Quelle est la spécificité du test de dépistage ? 
       Answers: 
@@ -334,7 +303,6 @@
       	55 %	 (False)
       	92 %	 (True)
       	non calculable (False)
-      Feedback:  
       Question: Enquete-vpp ( IDEA/Alerte-Investigation )
        [html]Un test de dépistage du cancer du sein a été effectué chez 600 femmes atteintes d’un cancer du sein (confirmé par biopsie) et chez 600 femmes non atteintes. Les résultats du test ont été positifs chez 150 femmes atteintes d’un cancer et chez 50 femmes non atteintes.Quelle est la valeur prédictive positive du test de dépistage? 
       Answers: 
@@ -343,7 +311,6 @@
       	55 %	 (False)
       	92 %	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Enquete-vpn ( IDEA/Alerte-Investigation )
        [html]Un test de dépistage du cancer du sein a été effectué chez 600 femmes atteintes d’un cancer du sein (confirmé par biopsie) et chez 600 femmes non atteintes. Les résultats du test ont été positifs chez 150 femmes atteintes d’un cancer et chez 50 femmes non atteintes.Quelle est la valeur prédictive négative ? 
       Answers: 
@@ -352,7 +319,6 @@
       	55%	 (True)
       	92%	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Epd_Vac-efficacite ( IDEA/Alerte-Investigation )
        [html] Les résultats d’une enquête de cohorte réalisée lors d’une épidémie de rougeole au Burundi donnent les résultats suivant\: Parmi les vaccinés\: 40 cas de rougeole, 130 sans rougeole; parmi les non vaccinés\: 92 cas de rougeole, 122 sans rougeole. Quelle est l’efficacité du vaccin contre la rougeole ? 
       Answers: 
@@ -361,7 +327,6 @@
       	31%	 (False)
       	45%	 (True)
       	71% (False)
-      Feedback:  
       Question: Epd_Vac-suivi_prog_vac ( IDEA/Alerte-Investigation )
        Parmi les activités suivantes, lesquelles permettent de suivre l’implémentation d’un programme de vaccination \: 
       Answers: 
@@ -370,7 +335,6 @@
       	La surveillance des effets secondaires. (True [ 25 %])
       	La surveillance des maladies évitables par les vaccinations. (True [ 25 %])
       	Le contrôle des vaccinations obligatoires. (False [ -100 %])
-      Feedback:  
       Question: Epd_Vac-couverture_vac ( IDEA/Alerte-Investigation )
        Quelles sont les affirmations exactes concernant la couverture vaccinale \: 
       Answers: 
@@ -379,7 +343,6 @@
       	Elle nécessite une estimation de la population concernée par la vaccination. (True [ 33.33333 %])
       	Elle peut être estimée par des données de remboursement ou de vente. (True [ 33.33333 %])
       	A efficacité vaccinale constante, la proportion de cas vaccinés augmente lorsque la couverture vaccinale augmente. (True [ 33.33333 %])
-      Feedback:  
       Question: Envir-preoccupations ( IDEA/Alerte-Investigation )
        Pour répondre aux préoccupations de la population en santé-environnement ou en santé en milieu professionnel \: 
       Answers: 
@@ -387,7 +350,6 @@
       	Il faut vérifier et valider le signal (True)
       	Il est important d’engager une réflexion pour définir le(s) outils(s) pertinent(s) à mettre en place (True)
       	il est nécessaire de faire une étude épidémiologique (False)
-      Feedback:  
       Question: Envir-lien ( IDEA/Alerte-Investigation )
        Le lien entre événement de santé et qualité des milieux de vie est difficile à établir car nous travaillons sur \: 
       Answers: 
@@ -396,7 +358,6 @@
       	Des délais d’apparition des effets sur la santé par rapport à l’exposition qui sont trop courts (False [ -50 %])
       	Des expositions multiples (True [ 33.33333 %])
       	Des populations non-coopérantes (False [ -50 %])
-      Feedback:  
       Quiz containing  39  questions 
 
 ---
@@ -413,7 +374,6 @@
       	14,3%	 (False)
       	40,0%	 (True)
       	l’information donnée ne permet pas de calculer le taux d’attaque (False)
-      Feedback:  
       Question: AI-risque_relatif ( IDEA/Alerte-Investigation )
        [html]Un questionnaire a été administré à tous les participants d’un diner dont certains participants sont malades. Il apparait que 30 malades et 20 non-malades ont consommé de la salade piémontaise tandis que 2 malades et 34 non-malades n’en ont pas consommé. Quel est le risque relatif d’être malade si l’on a consommé cette salade ? 
       Answers: 
@@ -422,7 +382,6 @@
       	4,0	 (True)
       	5,5	 (False)
       	8,3 (False)
-      Feedback:  
       Question: AI-PR-definition_cas ( IDEA/Alerte-Investigation )
        [html] Lors d’une épidémie de rougeole survenue en juin 2008 dans une école privée de Bretagne Nord, la définition de cas suivante a été adoptée \: tout enfant de l’école ayant présenté, en juin 2008, une fièvre supérieure à 38°5C et une éruption maculo-papuleuse et des anticorps IgM anti rougeole élevés dans le sérum. Cette définition est \: 
       Answers: 
@@ -431,7 +390,6 @@
       	pénible	 (False)
       	sensible	 (False)
       	prédictive (False)
-      Feedback:  
       Question: AI-types_signaux ( IDEA/Alerte-Investigation )
        Quels types de signaux alimentent le dispositif de veille sanitaire ? 
       Answers: 
@@ -440,7 +398,6 @@
       	Les évènements ou information repérées dans la presse scientifique, les réseaux de veille internationaux ou les médias (True [ 33.33333 %])
       	Les relevés d’écoutes téléphoniques (False [ -50 %])
       	Les données de recensement de l’INSEE (False [ -50 %])
-      Feedback:  
       Question: AI-alerte_sanitaire ( IDEA/Alerte-Investigation )
        Quand considère-t-on qu’un signal reçu par la veille sanitaire devient une alerte sanitaire ? 
       Answers: 
@@ -449,7 +406,6 @@
       	Quand le signal est validé pour son impact sanitaire potentiel ou avéré (False)
       	Quand le signal est vérifié et validé pour son impact sanitaire potentiel ou avéré (True)
       	Quand le signal est inhabituel (False)
-      Feedback:  
       Question: AI-actions_signal ( IDEA/Alerte-Investigation )
        Vous recevez au point focal de l’ARS, le message d’un maire signalant la survenue de trois cas de leucémies dans sa commune située à côté d’une centrale nucléaire. Quelles sont vos premières actions ? 
       Answers: 
@@ -458,7 +414,6 @@
       	Vous rappelez le maire pour compléter la fiche de signalement (True [ 33.33333 %])
       	Vous rassemblez des informations auprès des professionnels de santé concernés afin d’obtenir la confirmation du diagnostic médical de ces trois cas de leucémies (True [ 33.33333 %])
       	Vous prévenez la presse pour qu’elle alerte la population (False [ -50 %])
-      Feedback:  
       Question: Schema-PR-transversale ( IDEA/Alerte-Investigation )
        [html]Une enquête transversale est menée, au mois de juin, dans la région Auvergne où un dépistage est réalisé chez des sujets choisis aléatoirement. Parmi les 5 000 sujets inclus dans l’enquête, 250 présentent un diabète. La proportion 250/5 000 représente \: 
       Answers: 
@@ -467,7 +422,6 @@
       	la densité d’incidence	 (False)
       	la prévalence	 (True)
       	la létalité (False)
-      Feedback:  
       Question: Schema-PR-prevalence ( IDEA/Alerte-Investigation )
        [html]Snowtown est une communauté de 200 000 personnes. En 1960, on a enregistré 2 000 décès, <u>toutes</u> causes réunies. En 1960, 600 cas de tuberculose ont été recensés dont 400 hommes et 200 femmes. Pendant la même année, 120 décès dus à la tuberculose ont été rapportés dont 100 hommes. Quelle est la prévalence de la tuberculose en 1960 ? 
       Answers: 
@@ -476,7 +430,6 @@
       	30 pour 1 000	 (False)
       	60 pour 1 000	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-PR-mortalite_brut ( IDEA/Alerte-Investigation )
        [html] Snowtown est une communauté de 200 000 personnes. En 1960, on a enregistré 2 000 décès, <u>toutes</u> causes réunies. En 1960, 600 cas de tuberculose ont été recensés dont 400 hommes et 200 femmes. Pendant la même année, 120 décès dus à la tuberculose ont été rapportés dont 100 hommes. <br />Quel est le taux de mortalité brut en 1960? 
       Answers: 
@@ -485,7 +438,6 @@
       	10 pour 1 000	 (True)
       	100 pour 1 000	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-mortalite_prop ( IDEA/Alerte-Investigation )
        [html]Snowtown est une communauté de 200 000 personnes. En 1960, on a enregistré 2 000 décès, toutes causes réunies. En 1960, 600 cas de tuberculose ont été recensés dont 400 hommes et 200 femmes. Pendant la même année, 120 décès dus à la tuberculose ont été rapportés dont 100 hommes.<br/>Quelle est la mortalité proportionnelle due à la tuberculose ? 
       Answers: 
@@ -494,7 +446,6 @@
       	20 pour 100	 (False)
       	30 pour 100	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-letalite ( IDEA/Alerte-Investigation )
        [html]Snowtown est une communauté de 200 000 personnes. En 1960, on a enregistré 2 000 décès, toutes causes réunies. En 1960, 600 cas de tuberculose ont été recensés dont 400 hommes et 200 femmes. Pendant la même année, 120 décès dus à la tuberculose ont été rapportés dont 100 hommes.<br/>Quelle est la létalité de la tuberculose chez les hommes ?<br/> 
       Answers: 
@@ -503,7 +454,6 @@
       	20 pour 100	 (False)
       	2 pour 100	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-PR-def_epi ( IDEA/Alerte-Investigation )
        [html]Dans la définition d’épidémiologie, les termes « distribution » et « déterminants » se rapportent à \: 
       Answers: 
@@ -512,7 +462,6 @@
       	fréquences, caractéristiques et causes des phénomènes de santé	 (True)
       	services de santé publique et ressources allouées à ceux-ci	 (False)
       	caractéristiques des tests de dépistage (False)
-      Feedback:  
       Question: Schema-PR-def_epi_desc ( IDEA/Alerte-Investigation )
        [html]L’épidémiologie descriptive permet de répondre aux interrogations suivantes SAUF \: 
       Answers: 
@@ -521,7 +470,6 @@
       	pourquoi ?	 (True)
       	quand ?	 (False)
       	où ? (False)
-      Feedback:  
       Question: Schema-PR-Identifier_cas_temoin ( IDEA/Alerte-Investigation )
        [html]Une étude a été réalisée auprès de 150 personnes atteintes d’un cancer de la vessie qui sont comparées à 300 personnes non atteintes de cancer de la vessie et provenant de la même population que les précédentes. L’ensemble des sujets a été interrogé pour déterminer leur exposition antérieure au tabagisme passif. Cette étude est un exemple d’une \: 
       Answers: 
@@ -530,7 +478,6 @@
       	essai clinique	 (False)
       	étude cas-témoin	 (True)
       	étude écologique (False)
-      Feedback:  
       Question: Schema-PR-RR ( IDEA/Alerte-Investigation )
        [html]Dans une étude sur le cancer de la vessie et l’usage du tabac chez les hommes de Snowtown, on obtient les données suivantes \:<br>- chez les hommes fumeurs, le taux de cancer de la vessie est estimé à 69,0 pour 100 000 personnes-années.<br>- chez les hommes non fumeurs, le taux de cancer de la vessie est estimé à 37,4 pour 100 000 personnes-années. <br>Quel est le risque relatif de cancer de la vessie associé au tabagisme ? 
       Answers: 
@@ -539,7 +486,6 @@
       	0,07 %	 (False)
       	0,47	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-Fraction_etio ( IDEA/Alerte-Investigation )
        [html]Dans une étude sur le cancer de la vessie et l’usage du tabac chez les hommes de Snowtown, on obtient les données suivantes \:- chez les hommes fumeurs, le taux de cancer de la vessie est estimé à 69,0 pour 100 000 personnes-années- chez les hommes non fumeurs, le taux de cancer de la vessie est estimé à 37,4 pour 100 000 personnes-années <br>Quelle est la fraction étiologique de cancer de la vessie attribuable à la cigarette chez les fumeurs ? 
       Answers: 
@@ -548,7 +494,6 @@
       	0,46	 (True)
       	46	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-Causalite ( IDEA/Alerte-Investigation )
        [html]Pour affirmer la nature causale d’un facteur de risque dans la survenue d’une maladie, il suffit \: 
       Answers: 
@@ -557,7 +502,6 @@
       	d’observer une association significative entre le facteur de risque et la maladie (p<0,001)	 (False)
       	de savoir si l’exposition à ce facteur est antérieure à la survenue de la maladie	 (False)
       	aucune des réponses proposées (True)
-      Feedback:  
       Question: Schema-PR-Temoins ( IDEA/Alerte-Investigation )
        [html]Dans une étude cas-témoin, un bon groupe témoin doit \: 
       Answers: 
@@ -566,7 +510,6 @@
       	<p>être choisi en fonction de l’exposition</p>	 (False [ -50 %])
       	<p>avoir la possibilité de développer la maladie</p>	 (True [ 50 %])
       	<p>savoir passer le relai !</p> (False)
-      Feedback:  
       Question: Stat-PR-perc_augment ( IDEA/Alerte-Investigation )
        [html]En 2006, 400 cas de rougeole ont été identifiés dans un centre de santé. En 2007, ce nombre est de 475. Quel est le pourcentage d’augmentation du nombre de cas de rougeole? 
       Answers: 
@@ -575,7 +518,6 @@
       	119 %	 (False)
       	16 %	 (False)
       	116 % (False)
-      Feedback:  
       Question: Stat-PR-signif_prevalence ( IDEA/Alerte-Investigation )
        [html]La prévalence d’une maladie a été comparée sur deux échantillons issus d’une population A et d’une population B. Les deux mesures donnent respectivement une prévalence de 27% sur l’échantillon A et de 35% sur l’échantillon B. Le test statistique de comparaison se conclut par l’expression \: p &lt; 0,02. Si alpha \= 5%, cela signifie que \: 
       Answers: 
@@ -584,7 +526,6 @@
       	la différence réelle entre les prévalences des deux populations est inférieure à 2%	 (False [ -33.33333 %])
       	la différence réelle entre les prévalences des deux populations est inférieure à 5%	 (False [ -33.33333 %])
       	il y a moins de 2 chances sur 100 d’observer un tel résultat si les deux populations dont sont issus les deux échantillons ont une prévalence identique (True [ 50 %])
-      Feedback:  
       Question: Stat-PR-distrib ( IDEA/Alerte-Investigation )
        [html]Lors d’une épidémie dans un village A, les cas de rougeole enregistrés parmi les enfants se répartissent selon les âges suivants \:<br>1 an\: 1 cas, 2 ans\: 6 cas, 3 ans\: 4 cas, 4 ans\: 3 cas, 4 ans\: 3 cas, 5 ans\: 1 cas, 8 ans\: 1 cas, 10 ans\: 1 cas, 14 ans\: 1 cas.<br>Quelle est la forme de la distribution ? 
       Answers: 
@@ -593,7 +534,6 @@
       	étirée à gauche	 (False)
       	bi-modale	 (False)
       	aléatoire (False)
-      Feedback:  
       Question: Stat-PR-tendance_centrale ( IDEA/Alerte-Investigation )
        [html]Pour une distribution étirée d’un côté, quelle est la mesure de tendance centrale la plus appropriée ? 
       Answers: 
@@ -602,7 +542,6 @@
       	écart type	 (False)
       	médiane	 (True)
       	mode (False)
-      Feedback:  
       Question: Stat-PR-intervalle ( IDEA/Alerte-Investigation )
        [html]Lors d’un sondage effectué sur un échantillon de 100 sujets représentatif de la population des cyclistes de la ville de Rennes, on constate que 28% d’entre eux portent habituellement un casque. L’intervalle de confiance à 95% est de plus ou moins 6%. Cet intervalle signifie que la proportion de l’ensemble des cyclistes de Rennes portant un casque \: 
       Answers: 
@@ -611,7 +550,6 @@
       	<p>est comprise entre 22% et 34% avec 5% de chance de se tromper</p>	 (True)
       	<p>est supérieure à 22% avec 5% de chance de se tromper</p>	 (False)
       	<p>a 95% de chance d’être égale à 28%</p> (False)
-      Feedback:  
       Question: Stat-graphique ( IDEA/Alerte-Investigation )
        [html]Vous devez présenter les taux d’incidence annuels de tuberculose par catégorie socio professionnelle des cas pour l’année 2009 pour votre pays. Quelle représentation graphique allez vous utiliser ? 
       Answers: 
@@ -620,7 +558,6 @@
       	Saint-Paulin	 (False)
       	Diagramme en barre	 (True)
       	Nuage de points (False)
-      Feedback:  
       Question: Stat-facteur_confusion ( IDEA/Alerte-Investigation )
        [html]Dans une étude cas témoin, pour vérifier l’existence d’une association entre une exposition et une maladie, on étudie l’influence d’un tiers facteur sur cette relation. Parmi les conditions suivantes, quelles sont celles qui doivent être remplies pour que ce facteur soit un facteur de confusion \: 
       Answers: 
@@ -629,7 +566,6 @@
       	les OR calculés dans chaque strate d’exposition au tiers facteur diffèrent entre eux	 (False [ -33.33333 %])
       	l’OR ajusté de Mantel Haenszel est identique à l’OR brut	 (False [ -33.33333 %])
       	l’OR ajusté de Mantel Haenszel est différent de l’OR brut (True [ 50 %])
-      Feedback:  
       Question: Surv-PR-incidence_cumulée ( IDEA/Alerte-Investigation )
        [html]Durant l’année 2007, 3 500 nouveaux cas de rougeole ont été enregistrés par le système de surveillance de la région X qui compte une population de 2 000 000 habitants. Le nombre 3 500/2 000 000 représente \: 
       Answers: 
@@ -638,7 +574,6 @@
       	la spécificité	 (False)
       	la létalité	 (False)
       	l’efficacité vaccinale (False)
-      Feedback:  
       Question: Surv-objectifs ( IDEA/Alerte-Investigation )
        [html]Quels sont les objectifs de la surveillance en santé publique ? 
       Answers: 
@@ -647,7 +582,6 @@
       	éclairer les décisions de santé publique grâce aux données sanitaires	 (True [ 25 %])
       	détecter l’émergence de nouvelles pathologies et la survenue des phénomènes épidémiques	 (True [ 25 %])
       	évaluer les politiques et stratégies de contrôle et de prévention des maladies (True [ 25 %])
-      Feedback:  
       Question: Surv-validation ( IDEA/Alerte-Investigation )
        La validation des données de surveillance...\: 
       Answers: 
@@ -656,7 +590,6 @@
       	...repose sur l’absence d’une définition de cas. (False [ -50 %])
       	...permet de confirmer les cas. (True [ 33.33333 %])
       	...est une étape optionnelle en situation d’urgence. (False [ -50 %])
-      Feedback:  
       Question: Surv-denominateur ( IDEA/Alerte-Investigation )
        La présence d’un dénominateur... \: 
       Answers: 
@@ -665,7 +598,6 @@
       	...facilite la comparaison des populations et des territoires (True [ 33.33333 %])
       	...est systématique dans toutes les données de surveillance (False [ -50 %])
       	...est systématiquement nécessaire pour analyser des données de surveillance. (False [ -50 %])
-      Feedback:  
       Question: Enquete-PR-types ( IDEA/Alerte-Investigation )
        [html]Une enquête est menée dans la montagne Bourbonnaise où un dépistage est réalisé chez des sujets choisis aléatoirement. Parmi les 1500 sujets inclus dans l’enquête, 60 présentent un diabète. Cette enquête est un exemple d’ \: 
       Answers: 
@@ -674,7 +606,6 @@
       	étude transversale	 (True)
       	étude écologique	 (False)
       	essai clinique (False)
-      Feedback:  
       Question: Enquete-depistage ( IDEA/Alerte-Investigation )
        [html]Un test de dépistage du cancer du sein a été effectué chez 600 femmes atteintes d’un cancer du sein (confirmé par biopsie) et chez 600 femmes non atteintes. Les résultats du test ont été positifs chez 150 femmes atteintes d’un cancer et chez 50 femmes non atteintes.Quelle est la sensibilité du test de dépistage ? 
       Answers: 
@@ -683,7 +614,6 @@
       	55 %	 (False)
       	92 %	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Enquete-specificite ( IDEA/Alerte-Investigation )
        [html]Un test de dépistage du cancer du sein a été effectué chez 600 femmes atteintes d’un cancer du sein (confirmé par biopsie) et chez 600 femmes non atteintes. Les résultats du test ont été positifs chez 150 femmes atteintes d’un cancer et chez 50 femmes non atteintes.Quelle est la spécificité du test de dépistage ? 
       Answers: 
@@ -692,7 +622,6 @@
       	55 %	 (False)
       	92 %	 (True)
       	non calculable (False)
-      Feedback:  
       Question: Enquete-vpp ( IDEA/Alerte-Investigation )
        [html]Un test de dépistage du cancer du sein a été effectué chez 600 femmes atteintes d’un cancer du sein (confirmé par biopsie) et chez 600 femmes non atteintes. Les résultats du test ont été positifs chez 150 femmes atteintes d’un cancer et chez 50 femmes non atteintes.Quelle est la valeur prédictive positive du test de dépistage? 
       Answers: 
@@ -701,7 +630,6 @@
       	55 %	 (False)
       	92 %	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Enquete-vpn ( IDEA/Alerte-Investigation )
        [html]Un test de dépistage du cancer du sein a été effectué chez 600 femmes atteintes d’un cancer du sein (confirmé par biopsie) et chez 600 femmes non atteintes. Les résultats du test ont été positifs chez 150 femmes atteintes d’un cancer et chez 50 femmes non atteintes.Quelle est la valeur prédictive négative ? 
       Answers: 
@@ -710,7 +638,6 @@
       	55%	 (True)
       	92%	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Epd_Vac-efficacite ( IDEA/Alerte-Investigation )
        [html] Les résultats d’une enquête de cohorte réalisée lors d’une épidémie de rougeole au Burundi donnent les résultats suivant\: Parmi les vaccinés\: 40 cas de rougeole, 130 sans rougeole; parmi les non vaccinés\: 92 cas de rougeole, 122 sans rougeole. Quelle est l’efficacité du vaccin contre la rougeole ? 
       Answers: 
@@ -719,7 +646,6 @@
       	31%	 (False)
       	45%	 (True)
       	71% (False)
-      Feedback:  
       Question: Epd_Vac-suivi_prog_vac ( IDEA/Alerte-Investigation )
        Parmi les activités suivantes, lesquelles permettent de suivre l’implémentation d’un programme de vaccination \: 
       Answers: 
@@ -728,7 +654,6 @@
       	La surveillance des effets secondaires. (True [ 25 %])
       	La surveillance des maladies évitables par les vaccinations. (True [ 25 %])
       	Le contrôle des vaccinations obligatoires. (False [ -100 %])
-      Feedback:  
       Question: Epd_Vac-couverture_vac ( IDEA/Alerte-Investigation )
        Quelles sont les affirmations exactes concernant la couverture vaccinale \: 
       Answers: 
@@ -737,7 +662,6 @@
       	Elle nécessite une estimation de la population concernée par la vaccination. (True [ 33.33333 %])
       	Elle peut être estimée par des données de remboursement ou de vente. (True [ 33.33333 %])
       	A efficacité vaccinale constante, la proportion de cas vaccinés augmente lorsque la couverture vaccinale augmente. (True [ 33.33333 %])
-      Feedback:  
       Question: Envir-preoccupations ( IDEA/Alerte-Investigation )
        Pour répondre aux préoccupations de la population en santé-environnement ou en santé en milieu professionnel \: 
       Answers: 
@@ -745,7 +669,6 @@
       	Il faut vérifier et valider le signal (True)
       	Il est important d’engager une réflexion pour définir le(s) outils(s) pertinent(s) à mettre en place (True)
       	il est nécessaire de faire une étude épidémiologique (False)
-      Feedback:  
       Question: Envir-lien ( IDEA/Alerte-Investigation )
        Le lien entre événement de santé et qualité des milieux de vie est difficile à établir car nous travaillons sur \: 
       Answers: 
@@ -754,7 +677,6 @@
       	Des délais d’apparition des effets sur la santé par rapport à l’exposition qui sont trop courts (False [ -50 %])
       	Des expositions multiples (True [ 33.33333 %])
       	Des populations non-coopérantes (False [ -50 %])
-      Feedback:  
       Quiz containing  39  questions 
 
 ---
@@ -771,7 +693,6 @@
       	14,3%	 (False)
       	40,0%	 (True)
       	l’information donnée ne permet pas de calculer le taux d’attaque (False)
-      Feedback:  
       Question: AI-risque_relatif ( IDEA/Alerte-Investigation )
        [html]Un questionnaire a été administré à tous les participants d’un diner dont certains participants sont malades. Il apparait que 30 malades et 20 non-malades ont consommé de la salade piémontaise tandis que 2 malades et 34 non-malades n’en ont pas consommé. Quel est le risque relatif d’être malade si l’on a consommé cette salade ? 
       Answers: 
@@ -780,7 +701,6 @@
       	4,0	 (True)
       	5,5	 (False)
       	8,3 (False)
-      Feedback:  
       Question: AI-PR-definition_cas ( IDEA/Alerte-Investigation )
        [html] Lors d’une épidémie de rougeole survenue en juin 2008 dans une école privée de Bretagne Nord, la définition de cas suivante a été adoptée \: tout enfant de l’école ayant présenté, en juin 2008, une fièvre supérieure à 38°5C et une éruption maculo-papuleuse et des anticorps IgM anti rougeole élevés dans le sérum. Cette définition est \: 
       Answers: 
@@ -789,7 +709,6 @@
       	pénible	 (False)
       	sensible	 (False)
       	prédictive (False)
-      Feedback:  
       Question: AI-types_signaux ( IDEA/Alerte-Investigation )
        Quels types de signaux alimentent le dispositif de veille sanitaire ? 
       Answers: 
@@ -798,7 +717,6 @@
       	Les évènements ou information repérées dans la presse scientifique, les réseaux de veille internationaux ou les médias (True [ 33.33333 %])
       	Les relevés d’écoutes téléphoniques (False [ -50 %])
       	Les données de recensement de l’INSEE (False [ -50 %])
-      Feedback:  
       Question: AI-alerte_sanitaire ( IDEA/Alerte-Investigation )
        Quand considère-t-on qu’un signal reçu par la veille sanitaire devient une alerte sanitaire ? 
       Answers: 
@@ -807,7 +725,6 @@
       	Quand le signal est validé pour son impact sanitaire potentiel ou avéré (False)
       	Quand le signal est vérifié et validé pour son impact sanitaire potentiel ou avéré (True)
       	Quand le signal est inhabituel (False)
-      Feedback:  
       Question: AI-actions_signal ( IDEA/Alerte-Investigation )
        Vous recevez au point focal de l’ARS, le message d’un maire signalant la survenue de trois cas de leucémies dans sa commune située à côté d’une centrale nucléaire. Quelles sont vos premières actions ? 
       Answers: 
@@ -816,7 +733,6 @@
       	Vous rappelez le maire pour compléter la fiche de signalement (True [ 33.33333 %])
       	Vous rassemblez des informations auprès des professionnels de santé concernés afin d’obtenir la confirmation du diagnostic médical de ces trois cas de leucémies (True [ 33.33333 %])
       	Vous prévenez la presse pour qu’elle alerte la population (False [ -50 %])
-      Feedback:  
       Question: Schema-PR-transversale ( IDEA/Alerte-Investigation )
        [html]Une enquête transversale est menée, au mois de juin, dans la région Auvergne où un dépistage est réalisé chez des sujets choisis aléatoirement. Parmi les 5 000 sujets inclus dans l’enquête, 250 présentent un diabète. La proportion 250/5 000 représente \: 
       Answers: 
@@ -825,7 +741,6 @@
       	la densité d’incidence	 (False)
       	la prévalence	 (True)
       	la létalité (False)
-      Feedback:  
       Question: Schema-PR-prevalence ( IDEA/Alerte-Investigation )
        [html]Snowtown est une communauté de 200 000 personnes. En 1960, on a enregistré 2 000 décès, <u>toutes</u> causes réunies. En 1960, 600 cas de tuberculose ont été recensés dont 400 hommes et 200 femmes. Pendant la même année, 120 décès dus à la tuberculose ont été rapportés dont 100 hommes. Quelle est la prévalence de la tuberculose en 1960 ? 
       Answers: 
@@ -834,7 +749,6 @@
       	30 pour 1 000	 (False)
       	60 pour 1 000	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-PR-mortalite_brut ( IDEA/Alerte-Investigation )
        [html] Snowtown est une communauté de 200 000 personnes. En 1960, on a enregistré 2 000 décès, <u>toutes</u> causes réunies. En 1960, 600 cas de tuberculose ont été recensés dont 400 hommes et 200 femmes. Pendant la même année, 120 décès dus à la tuberculose ont été rapportés dont 100 hommes. <br />Quel est le taux de mortalité brut en 1960? 
       Answers: 
@@ -843,7 +757,6 @@
       	10 pour 1 000	 (True)
       	100 pour 1 000	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-mortalite_prop ( IDEA/Alerte-Investigation )
        [html]Snowtown est une communauté de 200 000 personnes. En 1960, on a enregistré 2 000 décès, toutes causes réunies. En 1960, 600 cas de tuberculose ont été recensés dont 400 hommes et 200 femmes. Pendant la même année, 120 décès dus à la tuberculose ont été rapportés dont 100 hommes.<br/>Quelle est la mortalité proportionnelle due à la tuberculose ? 
       Answers: 
@@ -852,7 +765,6 @@
       	20 pour 100	 (False)
       	30 pour 100	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-letalite ( IDEA/Alerte-Investigation )
        [html]Snowtown est une communauté de 200 000 personnes. En 1960, on a enregistré 2 000 décès, toutes causes réunies. En 1960, 600 cas de tuberculose ont été recensés dont 400 hommes et 200 femmes. Pendant la même année, 120 décès dus à la tuberculose ont été rapportés dont 100 hommes.<br/>Quelle est la létalité de la tuberculose chez les hommes ?<br/> 
       Answers: 
@@ -861,7 +773,6 @@
       	20 pour 100	 (False)
       	2 pour 100	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-PR-def_epi ( IDEA/Alerte-Investigation )
        [html]Dans la définition d’épidémiologie, les termes « distribution » et « déterminants » se rapportent à \: 
       Answers: 
@@ -870,7 +781,6 @@
       	fréquences, caractéristiques et causes des phénomènes de santé	 (True)
       	services de santé publique et ressources allouées à ceux-ci	 (False)
       	caractéristiques des tests de dépistage (False)
-      Feedback:  
       Question: Schema-PR-def_epi_desc ( IDEA/Alerte-Investigation )
        [html]L’épidémiologie descriptive permet de répondre aux interrogations suivantes SAUF \: 
       Answers: 
@@ -879,7 +789,6 @@
       	pourquoi ?	 (True)
       	quand ?	 (False)
       	où ? (False)
-      Feedback:  
       Question: Schema-PR-Identifier_cas_temoin ( IDEA/Alerte-Investigation )
        [html]Une étude a été réalisée auprès de 150 personnes atteintes d’un cancer de la vessie qui sont comparées à 300 personnes non atteintes de cancer de la vessie et provenant de la même population que les précédentes. L’ensemble des sujets a été interrogé pour déterminer leur exposition antérieure au tabagisme passif. Cette étude est un exemple d’une \: 
       Answers: 
@@ -888,7 +797,6 @@
       	essai clinique	 (False)
       	étude cas-témoin	 (True)
       	étude écologique (False)
-      Feedback:  
       Question: Schema-PR-RR ( IDEA/Alerte-Investigation )
        [html]Dans une étude sur le cancer de la vessie et l’usage du tabac chez les hommes de Snowtown, on obtient les données suivantes \:<br>- chez les hommes fumeurs, le taux de cancer de la vessie est estimé à 69,0 pour 100 000 personnes-années.<br>- chez les hommes non fumeurs, le taux de cancer de la vessie est estimé à 37,4 pour 100 000 personnes-années. <br>Quel est le risque relatif de cancer de la vessie associé au tabagisme ? 
       Answers: 
@@ -897,7 +805,6 @@
       	0,07 %	 (False)
       	0,47	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-Fraction_etio ( IDEA/Alerte-Investigation )
        [html]Dans une étude sur le cancer de la vessie et l’usage du tabac chez les hommes de Snowtown, on obtient les données suivantes \:- chez les hommes fumeurs, le taux de cancer de la vessie est estimé à 69,0 pour 100 000 personnes-années- chez les hommes non fumeurs, le taux de cancer de la vessie est estimé à 37,4 pour 100 000 personnes-années <br>Quelle est la fraction étiologique de cancer de la vessie attribuable à la cigarette chez les fumeurs ? 
       Answers: 
@@ -906,7 +813,6 @@
       	0,46	 (True)
       	46	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Schema-Causalite ( IDEA/Alerte-Investigation )
        [html]Pour affirmer la nature causale d’un facteur de risque dans la survenue d’une maladie, il suffit \: 
       Answers: 
@@ -915,7 +821,6 @@
       	d’observer une association significative entre le facteur de risque et la maladie (p<0,001)	 (False)
       	de savoir si l’exposition à ce facteur est antérieure à la survenue de la maladie	 (False)
       	aucune des réponses proposées (True)
-      Feedback:  
       Question: Schema-PR-Temoins ( IDEA/Alerte-Investigation )
        [html]Dans une étude cas-témoin, un bon groupe témoin doit \: 
       Answers: 
@@ -924,7 +829,6 @@
       	<p>être choisi en fonction de l’exposition</p>	 (False [ -50 %])
       	<p>avoir la possibilité de développer la maladie</p>	 (True [ 50 %])
       	<p>savoir passer le relai !</p> (False)
-      Feedback:  
       Question: Stat-PR-perc_augment ( IDEA/Alerte-Investigation )
        [html]En 2006, 400 cas de rougeole ont été identifiés dans un centre de santé. En 2007, ce nombre est de 475. Quel est le pourcentage d’augmentation du nombre de cas de rougeole? 
       Answers: 
@@ -933,7 +837,6 @@
       	119 %	 (False)
       	16 %	 (False)
       	116 % (False)
-      Feedback:  
       Question: Stat-PR-signif_prevalence ( IDEA/Alerte-Investigation )
        [html]La prévalence d’une maladie a été comparée sur deux échantillons issus d’une population A et d’une population B. Les deux mesures donnent respectivement une prévalence de 27% sur l’échantillon A et de 35% sur l’échantillon B. Le test statistique de comparaison se conclut par l’expression \: p &lt; 0,02. Si alpha \= 5%, cela signifie que \: 
       Answers: 
@@ -942,7 +845,6 @@
       	la différence réelle entre les prévalences des deux populations est inférieure à 2%	 (False [ -33.33333 %])
       	la différence réelle entre les prévalences des deux populations est inférieure à 5%	 (False [ -33.33333 %])
       	il y a moins de 2 chances sur 100 d’observer un tel résultat si les deux populations dont sont issus les deux échantillons ont une prévalence identique (True [ 50 %])
-      Feedback:  
       Question: Stat-PR-distrib ( IDEA/Alerte-Investigation )
        [html]Lors d’une épidémie dans un village A, les cas de rougeole enregistrés parmi les enfants se répartissent selon les âges suivants \:<br>1 an\: 1 cas, 2 ans\: 6 cas, 3 ans\: 4 cas, 4 ans\: 3 cas, 4 ans\: 3 cas, 5 ans\: 1 cas, 8 ans\: 1 cas, 10 ans\: 1 cas, 14 ans\: 1 cas.<br>Quelle est la forme de la distribution ? 
       Answers: 
@@ -951,7 +853,6 @@
       	étirée à gauche	 (False)
       	bi-modale	 (False)
       	aléatoire (False)
-      Feedback:  
       Question: Stat-PR-tendance_centrale ( IDEA/Alerte-Investigation )
        [html]Pour une distribution étirée d’un côté, quelle est la mesure de tendance centrale la plus appropriée ? 
       Answers: 
@@ -960,7 +861,6 @@
       	écart type	 (False)
       	médiane	 (True)
       	mode (False)
-      Feedback:  
       Question: Stat-PR-intervalle ( IDEA/Alerte-Investigation )
        [html]Lors d’un sondage effectué sur un échantillon de 100 sujets représentatif de la population des cyclistes de la ville de Rennes, on constate que 28% d’entre eux portent habituellement un casque. L’intervalle de confiance à 95% est de plus ou moins 6%. Cet intervalle signifie que la proportion de l’ensemble des cyclistes de Rennes portant un casque \: 
       Answers: 
@@ -969,7 +869,6 @@
       	<p>est comprise entre 22% et 34% avec 5% de chance de se tromper</p>	 (True)
       	<p>est supérieure à 22% avec 5% de chance de se tromper</p>	 (False)
       	<p>a 95% de chance d’être égale à 28%</p> (False)
-      Feedback:  
       Question: Stat-graphique ( IDEA/Alerte-Investigation )
        [html]Vous devez présenter les taux d’incidence annuels de tuberculose par catégorie socio professionnelle des cas pour l’année 2009 pour votre pays. Quelle représentation graphique allez vous utiliser ? 
       Answers: 
@@ -978,7 +877,6 @@
       	Saint-Paulin	 (False)
       	Diagramme en barre	 (True)
       	Nuage de points (False)
-      Feedback:  
       Question: Stat-facteur_confusion ( IDEA/Alerte-Investigation )
        [html]Dans une étude cas témoin, pour vérifier l’existence d’une association entre une exposition et une maladie, on étudie l’influence d’un tiers facteur sur cette relation. Parmi les conditions suivantes, quelles sont celles qui doivent être remplies pour que ce facteur soit un facteur de confusion \: 
       Answers: 
@@ -987,7 +885,6 @@
       	les OR calculés dans chaque strate d’exposition au tiers facteur diffèrent entre eux	 (False [ -33.33333 %])
       	l’OR ajusté de Mantel Haenszel est identique à l’OR brut	 (False [ -33.33333 %])
       	l’OR ajusté de Mantel Haenszel est différent de l’OR brut (True [ 50 %])
-      Feedback:  
       Question: Surv-PR-incidence_cumulée ( IDEA/Alerte-Investigation )
        [html]Durant l’année 2007, 3 500 nouveaux cas de rougeole ont été enregistrés par le système de surveillance de la région X qui compte une population de 2 000 000 habitants. Le nombre 3 500/2 000 000 représente \: 
       Answers: 
@@ -996,7 +893,6 @@
       	la spécificité	 (False)
       	la létalité	 (False)
       	l’efficacité vaccinale (False)
-      Feedback:  
       Question: Surv-objectifs ( IDEA/Alerte-Investigation )
        [html]Quels sont les objectifs de la surveillance en santé publique ? 
       Answers: 
@@ -1005,7 +901,6 @@
       	éclairer les décisions de santé publique grâce aux données sanitaires	 (True [ 25 %])
       	détecter l’émergence de nouvelles pathologies et la survenue des phénomènes épidémiques	 (True [ 25 %])
       	évaluer les politiques et stratégies de contrôle et de prévention des maladies (True [ 25 %])
-      Feedback:  
       Question: Surv-validation ( IDEA/Alerte-Investigation )
        La validation des données de surveillance...\: 
       Answers: 
@@ -1014,7 +909,6 @@
       	...repose sur l’absence d’une définition de cas. (False [ -50 %])
       	...permet de confirmer les cas. (True [ 33.33333 %])
       	...est une étape optionnelle en situation d’urgence. (False [ -50 %])
-      Feedback:  
       Question: Surv-denominateur ( IDEA/Alerte-Investigation )
        La présence d’un dénominateur... \: 
       Answers: 
@@ -1023,7 +917,6 @@
       	...facilite la comparaison des populations et des territoires (True [ 33.33333 %])
       	...est systématique dans toutes les données de surveillance (False [ -50 %])
       	...est systématiquement nécessaire pour analyser des données de surveillance. (False [ -50 %])
-      Feedback:  
       Question: Enquete-PR-types ( IDEA/Alerte-Investigation )
        [html]Une enquête est menée dans la montagne Bourbonnaise où un dépistage est réalisé chez des sujets choisis aléatoirement. Parmi les 1500 sujets inclus dans l’enquête, 60 présentent un diabète. Cette enquête est un exemple d’ \: 
       Answers: 
@@ -1032,7 +925,6 @@
       	étude transversale	 (True)
       	étude écologique	 (False)
       	essai clinique (False)
-      Feedback:  
       Question: Enquete-depistage ( IDEA/Alerte-Investigation )
        [html]Un test de dépistage du cancer du sein a été effectué chez 600 femmes atteintes d’un cancer du sein (confirmé par biopsie) et chez 600 femmes non atteintes. Les résultats du test ont été positifs chez 150 femmes atteintes d’un cancer et chez 50 femmes non atteintes.Quelle est la sensibilité du test de dépistage ? 
       Answers: 
@@ -1041,7 +933,6 @@
       	55 %	 (False)
       	92 %	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Enquete-specificite ( IDEA/Alerte-Investigation )
        [html]Un test de dépistage du cancer du sein a été effectué chez 600 femmes atteintes d’un cancer du sein (confirmé par biopsie) et chez 600 femmes non atteintes. Les résultats du test ont été positifs chez 150 femmes atteintes d’un cancer et chez 50 femmes non atteintes.Quelle est la spécificité du test de dépistage ? 
       Answers: 
@@ -1050,7 +941,6 @@
       	55 %	 (False)
       	92 %	 (True)
       	non calculable (False)
-      Feedback:  
       Question: Enquete-vpp ( IDEA/Alerte-Investigation )
        [html]Un test de dépistage du cancer du sein a été effectué chez 600 femmes atteintes d’un cancer du sein (confirmé par biopsie) et chez 600 femmes non atteintes. Les résultats du test ont été positifs chez 150 femmes atteintes d’un cancer et chez 50 femmes non atteintes.Quelle est la valeur prédictive positive du test de dépistage? 
       Answers: 
@@ -1059,7 +949,6 @@
       	55 %	 (False)
       	92 %	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Enquete-vpn ( IDEA/Alerte-Investigation )
        [html]Un test de dépistage du cancer du sein a été effectué chez 600 femmes atteintes d’un cancer du sein (confirmé par biopsie) et chez 600 femmes non atteintes. Les résultats du test ont été positifs chez 150 femmes atteintes d’un cancer et chez 50 femmes non atteintes.Quelle est la valeur prédictive négative ? 
       Answers: 
@@ -1068,7 +957,6 @@
       	55%	 (True)
       	92%	 (False)
       	non calculable (False)
-      Feedback:  
       Question: Epd_Vac-efficacite ( IDEA/Alerte-Investigation )
        [html] Les résultats d’une enquête de cohorte réalisée lors d’une épidémie de rougeole au Burundi donnent les résultats suivant\: Parmi les vaccinés\: 40 cas de rougeole, 130 sans rougeole; parmi les non vaccinés\: 92 cas de rougeole, 122 sans rougeole. Quelle est l’efficacité du vaccin contre la rougeole ? 
       Answers: 
@@ -1077,7 +965,6 @@
       	31%	 (False)
       	45%	 (True)
       	71% (False)
-      Feedback:  
       Question: Epd_Vac-suivi_prog_vac ( IDEA/Alerte-Investigation )
        Parmi les activités suivantes, lesquelles permettent de suivre l’implémentation d’un programme de vaccination \: 
       Answers: 
@@ -1086,7 +973,6 @@
       	La surveillance des effets secondaires. (True [ 25 %])
       	La surveillance des maladies évitables par les vaccinations. (True [ 25 %])
       	Le contrôle des vaccinations obligatoires. (False [ -100 %])
-      Feedback:  
       Question: Epd_Vac-couverture_vac ( IDEA/Alerte-Investigation )
        Quelles sont les affirmations exactes concernant la couverture vaccinale \: 
       Answers: 
@@ -1095,7 +981,6 @@
       	Elle nécessite une estimation de la population concernée par la vaccination. (True [ 33.33333 %])
       	Elle peut être estimée par des données de remboursement ou de vente. (True [ 33.33333 %])
       	A efficacité vaccinale constante, la proportion de cas vaccinés augmente lorsque la couverture vaccinale augmente. (True [ 33.33333 %])
-      Feedback:  
       Question: Envir-preoccupations ( IDEA/Alerte-Investigation )
        Pour répondre aux préoccupations de la population en santé-environnement ou en santé en milieu professionnel \: 
       Answers: 
@@ -1103,7 +988,6 @@
       	Il faut vérifier et valider le signal (True)
       	Il est important d’engager une réflexion pour définir le(s) outils(s) pertinent(s) à mettre en place (True)
       	il est nécessaire de faire une étude épidémiologique (False)
-      Feedback:  
       Question: Envir-lien ( IDEA/Alerte-Investigation )
        Le lien entre événement de santé et qualité des milieux de vie est difficile à établir car nous travaillons sur \: 
       Answers: 
@@ -1112,6 +996,5 @@
       	Des délais d’apparition des effets sur la santé par rapport à l’exposition qui sont trop courts (False [ -50 %])
       	Des expositions multiples (True [ 33.33333 %])
       	Des populations non-coopérantes (False [ -50 %])
-      Feedback:  
       Quiz containing  39  questions 
 
