@@ -13,15 +13,44 @@
 #' @export
 Quiz <- R6::R6Class("Quiz",
                           public = list(
+                            #' @field debug A boolean indicating if the debug mode is activated
+                            debug = FALSE,
                             #' @description
                             #' This function initializes the Quiz object
-                            #' @param data A list containing the data of the Quiz
+                            #' @param x either a filename and its path,
+                            #' a list containing the data of the Quiz object, or
+                            #' a character vector containing the GIFT formatted text
+                            #' @param debug A boolean indicating if the debug mode is activated (FALSE)
                             #' @return The Quiz object
-                            initialize = function(data) {
-                              if(!is.null(data) && length(data) == 1){
-                                self$import_gift(data)
-                              }else if(!is.null(data) && is.list(data) && length(data) >= 1){
-                                self$import(data)
+                            initialize = function(x, debug = FALSE) {
+                              self$debug = debug
+                              if(!is.null(x)){
+                                if(length(x) == 1 && !is.list(x)){
+                                  if(file.exists(x)){
+                                    if(is.RDS(x)){
+                                      data = readRDS(x)
+                                      self$import(data)
+                                    }else if (is.GIFT(x)){
+                                      text = readLines(x)
+                                      self$import_gift(text)
+                                    }else{
+                                      stop("The file is not a GIFT file or an RDS file")
+                                    }
+                                  }else{
+                                    #we consider that x is a GIFT formatted text
+                                    self$import_gift(x)
+                                  }
+                                }else if(is.list(x) && length(x) >= 1){
+                                  #we consider that x is a list of questions
+                                  self$import(data)
+                                }else if(is.character(x) && length(x) >= 1){
+                                  #we consider that x is a GIFT formatted text
+                                  self$import_gift(x)
+                                }else{
+                                  stop("The input is not a valid input")
+                                }
+                              } else {
+                                stop("The input is not a valid input")
                               }
                             },
                             #' @description
@@ -29,7 +58,7 @@ Quiz <- R6::R6Class("Quiz",
                             #' @param text A character vector containing the GIFT formatted text
                             #'
                             import_gift = function(text) {
-                              res = GIFTParser(text)
+                              res = GIFTParser(text, debug = self$debug)
                               if(length(res) > 0) {
                                 private$questions = lapply(res, function(x) {
                                   return(Question$new(x))
@@ -63,11 +92,9 @@ Quiz <- R6::R6Class("Quiz",
                           active = list(
                             #' @field list This function returns the list of questions
                             list = function() {
-                              return(private$questions)
-                            },
-                            #' @field description This function returns the description of the Quiz object
-                            description = function() {
-                              return("Quiz")
+                              lapply(private$questions, function(x) {
+                                return(x$list)
+                              })
                             }
                           ),
 

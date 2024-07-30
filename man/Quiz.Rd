@@ -12,12 +12,17 @@ and manipulate questions.
 Questions can be added to the Quiz object using the add_question method, or
 directly using a GIFT file with the import_gift method.
 }
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{debug}}{A boolean indicating if the debug mode is activated}
+}
+\if{html}{\out{</div>}}
+}
 \section{Active bindings}{
 \if{html}{\out{<div class="r6-active-bindings">}}
 \describe{
 \item{\code{list}}{This function returns the list of questions}
-
-\item{\code{description}}{This function returns the description of the Quiz object}
 }
 \if{html}{\out{</div>}}
 }
@@ -37,13 +42,17 @@ directly using a GIFT file with the import_gift method.
 \subsection{Method \code{new()}}{
 This function initializes the Quiz object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Quiz$new(data)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Quiz$new(x, debug = FALSE)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{data}}{A list containing the data of the Quiz}
+\item{\code{x}}{either a filename and its path,
+a list containing the data of the Quiz object, or
+a character vector containing the GIFT formatted text}
+
+\item{\code{debug}}{A boolean indicating if the debug mode is activated (FALSE)}
 }
 \if{html}{\out{</div>}}
 }

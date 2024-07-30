@@ -70,14 +70,15 @@ Question <- R6::R6Class("Question",
                           #' @field list returns the question as a list
                           list = function() {
                             list(
-                              id = private$id,
                               category = private$category,
+                              question_type = private$question_type,
                               title = private$title,
                               text = private$text,
+                              suffix_text = private$suffix_text,
                               answers = lapply(private$answers, function(answer) {
                                 answer$list
                               }),
-                              question_feedback = private$question_feedback,
+                              question_feedback = private$question_feedback
                             )
                           }
                         ),
@@ -86,6 +87,7 @@ Question <- R6::R6Class("Question",
                           id = NULL,
                           title = NULL,
                           text = NULL,
+                          suffix_text = NULL,
                           category = NULL,
                           question_type = NULL,
                           question_feedback = NULL,
@@ -99,6 +101,7 @@ Question <- R6::R6Class("Question",
                           load_data = function(data) {
                             private$title <- data$title
                             private$text <- data$text
+                            private$suffix_text <- data$suffix_text
                             private$category <- data$category
                             private$question_type <- data$question_type
                             private$question_feedback <- data$question_feedback
