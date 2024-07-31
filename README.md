@@ -43,7 +43,7 @@ Which planet is known as the Red Planet?
     ~Jupiter#Incorrect. Jupiter is the largest planet in our solar system.
     ~Saturn#Incorrect. Saturn is known for its prominent ring system.
 }
-
+#### Even color-blind people may answer this question correctly.
 ::Question 2::
 What is the capital of France?
 {
@@ -84,7 +84,7 @@ my_quiz
 #>  Venus (False:  Incorrect. Venus is often called Earth's twin but not the Red Planet.      )
 #>  Jupiter (False:  Incorrect. Jupiter is the largest planet in our solar system.      )
 #>  Saturn (False:  Incorrect. Saturn is known for its prominent ring system. )
-#> Feedback:  
+#> Feedback:   Even color-blind people may answer this question correctly. 
 #> Question: Question 2 ( No category )
 #>  What is the capital of France? 
 #> Answers: 
@@ -93,7 +93,6 @@ my_quiz
 #>  Berlin (False:  Incorrect. Berlin is the capital of Germany.      )
 #>  Madrid (False:  Incorrect. Madrid is the capital of Spain.      )
 #>  Rome (False:  Incorrect. Rome is the capital of Italy. )
-#> Feedback:  
 #> Question: Question 3 ( No category )
 #>  What is the chemical symbol for gold? 
 #> Answers: 
@@ -102,7 +101,6 @@ my_quiz
 #>  Fe (False:  Incorrect. Fe is the chemical symbol for iron.      )
 #>  Pb (False:  Incorrect. Pb is the chemical symbol for lead.      )
 #>  Hg (False:  Incorrect. Hg is the chemical symbol for mercury. )
-#> Feedback:  
 #> Quiz containing  3  questions
 ```
 

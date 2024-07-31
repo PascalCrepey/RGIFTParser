@@ -39,12 +39,16 @@ GIFTParser <- function(text, debug = FALSE){
     parcr::store("debug", TRUE)
     print(vec_text)
     res = parcr::reporter(GIFTBank())(vec_text)
+    return(res)
   }else{
     parcr::store("debug", FALSE)
     res = GIFTBank()(vec_text)
+    if(!is.null(res$L)){
+      return(res$L)
+    }else{
+      stop("No question found in the string: ", text)
+    }
   }
-
-  return(res$L)
 }
 
 

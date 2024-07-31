@@ -14,10 +14,10 @@ Answer <- R6::R6Class("Answer",
                           initialize = function(data) {
                             #generate a random 32 characters id for the question
                             private$id = paste(sample(c(0:9, letters, LETTERS), 32, replace = TRUE), collapse = "")
-                            private$weight = data$weight
-                            private$answer = data$answer
-                            private$correct = ifelse(data$operator == "=", TRUE, FALSE)
-                            private$feedback = data$feedback
+                            if(!is.null(data) && is.list(data)){
+                              private$load_data(data)
+                            }
+
                           },
                           #' @description
                           #' this function prints the answer
@@ -44,7 +44,6 @@ Answer <- R6::R6Class("Answer",
                         #' @field list returns the answer as a list
                         list = function() {
                           return(list(
-                            id = private$id,
                             weight = private$weight,
                             answer = private$answer,
                             correct = private$correct,
@@ -56,7 +55,32 @@ Answer <- R6::R6Class("Answer",
                         id = NULL,
                         weight = NULL,
                         answer = NULL,
+                        min = NULL,
+                        max = NULL,
+                        precision = NULL,
                         correct = NULL,
-                        feedback = NULL
+                        feedback = NULL,
+                        load_data = function(data){
+                          if(!is.null(data$weight))
+                            private$weight = data$weight
+                          if(!is.null(data$answer))
+                            private$answer = data$answer
+                          if(!is.null(data$precision))
+                            private$precision = data$precision
+                          if(!is.null(data$max))
+                            private$max = data$max
+                          if(!is.null(data$min))
+                            private$min = data$min
+                          if(!is.null(data$correct)){
+                            private$correct = data$correct
+                          }else if(!is.null(data$operator)){
+                            private$correct = ifelse(data$operator == "=" ||
+                                                       (!is.null(data$weight)
+                                                        && data$weight > 0),
+                                                     TRUE,
+                                                     FALSE)
+                          }
+                          private$feedback = data$feedback
+                        }
                       )
 )

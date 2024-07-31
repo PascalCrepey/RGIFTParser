@@ -49,7 +49,7 @@ Which planet is known as the Red Planet?
     ~Jupiter#Incorrect. Jupiter is the largest planet in our solar system.
     ~Saturn#Incorrect. Saturn is known for its prominent ring system.
 }
-
+#### Even color-blind people may answer this question correctly.
 ::Question 2::
 What is the capital of France?
 {

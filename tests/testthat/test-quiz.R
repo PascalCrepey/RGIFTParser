@@ -46,3 +46,30 @@ test_that("building a simple quiz object with two questions", {
   expect_snapshot(print(quiz))
 
 })
+
+test_that("Error when build quiz from non existing file", {
+
+  expect_error(Quiz$new("data/quiz.txt"))
+
+})
+
+test_that("Build quiz from file with multiple questions", {
+  #load from a GIFT file
+  quiz = Quiz$new(system.file("extdata/test.gift", package = "RGIFTParser"))
+  expect_true("R6" %in% class(quiz))
+  expect_true("Quiz" %in% class(quiz))
+  expect_snapshot(print(quiz))
+
+  #load from a character vector
+  quiz = Quiz$new(readLines(system.file("extdata/test.gift", package = "RGIFTParser")))
+  expect_true("R6" %in% class(quiz))
+  expect_true("Quiz" %in% class(quiz))
+  expect_snapshot(print(quiz))
+
+  #saveRDS(quiz$list, "inst/extdata/test.rds")
+  #load from a saved RDS file
+  quiz = Quiz$new(system.file("extdata/test.rds", package = "RGIFTParser"))
+  expect_true("R6" %in% class(quiz))
+  expect_true("Quiz" %in% class(quiz))
+  expect_snapshot(print(quiz))
+})
