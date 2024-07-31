@@ -68,7 +68,7 @@ parse_numeric_answer <- function(line){
   m_r <- stringr::str_match(line, r"(^\s*#?\s*=?(?:%\-?\d*(?:\.|,)?\d*%)?\s*(\-?\d+(?:(?:\.|,)?\d+)?)(?:\.\.(\-?\d+(?:(?:\.|,)?\d+)?))?\s*#*)")
 
   if (is.na(m_p[1]) && is.na(m_r[1])){
-    return(NULL) # signal failure: not a numeric answer
+    NULL # signal failure: not a numeric answer
   } else if(!is.na(m_p[3])){
     list(answer = as.numeric(m_p[2]),
          precision = as.numeric(m_p[3]))

@@ -43,12 +43,15 @@ Answer <- R6::R6Class("Answer",
                       active = list(
                         #' @field list returns the answer as a list
                         list = function() {
-                          return(list(
+                          list(
                             weight = private$weight,
                             answer = private$answer,
+                            min = private$min,
+                            max = private$max,
+                            precision = private$precision,
                             correct = private$correct,
                             feedback = private$feedback
-                          ))
+                          )
                         }
                       ),
                       private = list(

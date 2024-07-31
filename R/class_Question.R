@@ -97,7 +97,7 @@ Question <- R6::R6Class("Question",
                             answers <- lapply(answers, function(answer) {
                               Answer$new(answer)
                             })
-                            return(answers)
+                            answers
                           },
                           load_data = function(data) {
                             private$title <- data$title

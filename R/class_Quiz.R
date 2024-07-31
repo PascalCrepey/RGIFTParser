@@ -61,7 +61,7 @@ Quiz <- R6::R6Class("Quiz",
                               res = GIFTParser(text, debug = self$debug)
                               if(length(res) > 0) {
                                 private$questions = lapply(res, function(x) {
-                                  return(Question$new(x))
+                                  Question$new(x)
                                 })
                               }
                               invisible(self)
@@ -73,7 +73,7 @@ Quiz <- R6::R6Class("Quiz",
                             #'
                             import = function(data) {
                               private$questions = lapply(data, function(x) {
-                                return(Question$new(x))
+                                Question$new(x)
                               })
                               invisible(self)
                             },
@@ -93,7 +93,7 @@ Quiz <- R6::R6Class("Quiz",
                             #' @field list This function returns the list of questions
                             list = function() {
                               lapply(private$questions, function(x) {
-                                return(x$list)
+                                x$list
                               })
                             }
                           ),
