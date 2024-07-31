@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/PascalCrepey/RGIFTParser/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/PascalCrepey/RGIFTParser/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/PascalCrepey/RGIFTParser/branch/main/graph/badge.svg)](https://app.codecov.io/gh/PascalCrepey/RGIFTParser?branch=main)
+[![CodeFactor](https://www.codefactor.io/repository/github/pascalcrepey/rgiftparser/badge/main)](https://www.codefactor.io/repository/github/pascalcrepey/rgiftparser/overview/main)
 <!-- badges: end -->
 
 The goal of RGIFTParser is to provide a parser for the GIFT format. The GIFT format is a simple and flexible way to create quizzes. It is used by the Moodle platform. The parser is using the [parcr](https://github.com/SystemsBioinformatics/parcr) package.

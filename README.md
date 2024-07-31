@@ -10,6 +10,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![R-CMD-check](https://github.com/PascalCrepey/RGIFTParser/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/PascalCrepey/RGIFTParser/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/PascalCrepey/RGIFTParser/branch/main/graph/badge.svg)](https://app.codecov.io/gh/PascalCrepey/RGIFTParser?branch=main)
+[![CodeFactor](https://www.codefactor.io/repository/github/pascalcrepey/rgiftparser/badge/main)](https://www.codefactor.io/repository/github/pascalcrepey/rgiftparser/overview/main)
 <!-- badges: end -->
 
 The goal of RGIFTParser is to provide a parser for the GIFT format. The
