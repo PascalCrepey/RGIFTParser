@@ -5,3 +5,4 @@
 ^\.github$
 ^tmp$
 ^codecov\.yml$
+^docs$

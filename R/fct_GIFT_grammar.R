@@ -10,9 +10,9 @@ GIFTBlock <- function(){
     function(x) {
       #message("Block: ", x, length(x))
       if(!is.null(unlist(x))) {
-        return(list(x))
+        list(x)
       } else {
-        return(list())
+        list()
       }
     }
 }
@@ -23,7 +23,7 @@ GIFTCategory <- function(){
     parcr::MaybeEmpty() %using% function(x) {
       if(parcr::retrieve("debug")) message("Category: ", x)
       parcr::store("current_category" , x)
-      return(NULL)
+      NULL
     }
 }
 
@@ -66,7 +66,7 @@ splitAnswers <-function(){
     new_r1 = gsub("(#?=|~)", "\n\\1",x[1])
     r_beg = strsplit(trimws(new_r1), "\n")[[1]]
     if(parcr::retrieve("debug")) message("Splitted answers: ", paste0(r_beg, collapse = "(NL)"))
-    return(list(R=c(r_beg, r_end)))
+    list(R=c(r_beg, r_end))
   }
 }
 
@@ -74,12 +74,9 @@ GIFTAnswer <- function(){
   parcr::match_s(parse_whole_answer) %using% \(x) list(x)
 }
 
-
 GIFTQuestionTitle <- function() {
   parcr::match_s(parse_title)
 }
-
-
 
 GIFTQuestionText <- function() {
   parcr::match_s(parse_question_text)

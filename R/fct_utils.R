@@ -3,9 +3,9 @@
 is.RDS = function(x) {
   tryCatch({
     readRDS(x)
-    return(TRUE)
+    TRUE
   }, error = function(e) {
-    return(FALSE)
+    FALSE
   })
 }
 
@@ -13,10 +13,10 @@ is.RDS = function(x) {
 is.GIFT = function(x) {
   tryCatch({
     readLines(x)
-    return(TRUE)
+    TRUE
   }, error = function(e) {
-    return(FALSE)
+    FALSE
   }, warning = function(w) {
-    return(FALSE)
+    FALSE
   })
 }

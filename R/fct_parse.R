@@ -4,9 +4,9 @@
 parse_category <- function(line){
   m <- stringr::str_match(line, "^\\$CATEGORY: ([\\w\\W*]+)$")
   if (is.na(m[1])) {
-    return(list()) # signal failure: not a title
+    list() # signal failure: not a title
   } else {
-    return(m[2])
+    m[2]
   }
 }
 
@@ -26,26 +26,25 @@ parse_whole_answer <- function(x) {
     parcr::store("current_question_type" , "boolean")
     res = paste("boolean:", boolean, ":", feedback)
     if(parcr::retrieve("debug")) message("Answer: ", res)
-    return(list(answer = boolean,
-                feedback = feedback))
+    list(answer = boolean,
+         feedback = feedback)
   }else if(is.numeric_answer(x)){
     parcr::store("current_question_type" , "numeric")
     if(parcr::retrieve("debug")) message("Question set as numeric.")
-    return(c(parse_numeric_answer(x), feeback = feedback))
+    c(parse_numeric_answer(x), feeback = feedback)
   }else if(!is.null(answer)){
     res = paste(operator, ":", weight, ":", answer, ":", feedback)
     if(parcr::retrieve("debug")) message("Answer: ", res)
-    return(list(operator = operator,
-                weight = weight,
-                answer = answer,
-                feedback = feedback))
+    list(operator = operator,
+         weight = weight,
+         answer = answer,
+         feedback = feedback)
   }else{
-    return(list())
+    list()
   }
-
 }
 
-#parses numeric answer
+#parse numeric answer
 parse_numeric_answer <- function(line){
 
   #the # at the beginning is required only for the first answer
@@ -71,91 +70,93 @@ parse_numeric_answer <- function(line){
   if (is.na(m_p[1]) && is.na(m_r[1])){
     return(NULL) # signal failure: not a numeric answer
   } else if(!is.na(m_p[3])){
-    return(list(answer = as.numeric(m_p[2]),
-                precision = as.numeric(m_p[3])))
+    list(answer = as.numeric(m_p[2]),
+         precision = as.numeric(m_p[3]))
   } else if(!is.na(m_r[3])){
-    return(list(min = as.numeric(m_r[2]),
-                max = as.numeric(m_r[3])))
+    list(min = as.numeric(m_r[2]),
+         max = as.numeric(m_r[3]))
   } else {
-    return(list(answer = as.numeric(m_p[2])))
+    list(answer = as.numeric(m_p[2]))
   }
 }
 
-#parses boolean answer T, TRUE, F, FALSE
+#parse Boolean answer T, TRUE, F, FALSE
 parse_boolean_answer <- function(line){
   m <- stringr::str_match(line, "^\\s*(T|TRUE|F|FALSE)\\s*")
   if (is.na(m[1])) {
-    return(NULL) # signal failure: not a boolean answer
+    NULL # signal failure: not a Boolean answer
   } else {
-    return(m[2])
+    m[2]
   }
 }
-#parses operator = or ~ with potential space before
+
+#parse operator = or ~ with potential space before
 parse_operator <-function(line){
   m <- stringr::str_match(line, "^\\s*(=|~)")
   if (is.na(m[1])) {
-    return(NULL) # signal failure: not an operator
+    NULL # signal failure: not an operator
   } else {
-    return(m[2])
+    m[2]
   }
 }
 
-#parses weight either positive or negative decimal or integer number
+#parse weight either positive or negative decimal or integer number
 parse_weight <-function(line){
   m <- stringr::str_match(line, "^\\s*(?:=|~)%(\\-?\\d*(?:.|\\,)?\\d*)%")
   if (is.na(m[1])) {
-    return(NULL) # signal failure: not a weight
+    NULL # signal failure: not a weight
   } else {
-    return(as.numeric(sub(",",".",m[2])))
+    as.numeric(sub(",",".",m[2]))
   }
 }
 
-#parses answer text
+#parse answer text
 parse_answer <-function(line){
   m <- stringr::str_match(line, "^\\s*(?:=|~)(?:%\\-?\\d*(?:.|\\,)?\\d*%)?\\s*([^#]+)\\#*")
   if (is.na(m[1])) {
-    return(NULL) # signal failure: not an answer
+    NULL # signal failure: not an answer
   } else {
-    return(m[2])
+    m[2]
   }
 }
 
-#parses feedback text
+#parse feedback text for answer
 parse_feedback <-function(line){
   m <- stringr::str_match(line, "^.+\\#(.*)$")
   if (is.na(m[1])) {
-    return(NULL) # signal failure: not a feedback
+    NULL # signal failure: not a feedback
   } else {
-    return(m[2])
+    m[2]
   }
 }
 
-#parses title
+#parse question title
 parse_title <- function(line){
   m <- stringr::str_match(line, "^::([:print:]+)::")
   if (is.na(m[1])) {
-    return(list()) # signal failure: not a title
+    list() # signal failure: not a title
   } else {
-    return(m[2])
+    m[2]
   }
 }
 
+#parse question text
 parse_question_text <- function(line){
   m <- stringr::str_match(line, "([:print:]+)")
   if (is.na(m[1]) || is.feedback(line) || is.title(line)) {
-    return(list()) # signal failure: not a text
+    list() # signal failure: not a text
   } else {
     if(parcr::retrieve("debug")) message("Question text: ", m[2])
-    return(m[2])
+    m[2]
   }
 }
 
-
+#parse question feedback
 parse_question_feedback <- function(line){
   m <- stringr::str_match(line, "^####(.*)$")
   if (is.na(m[1])) {
-    return(list()) # signal failure: not a feedback
+    list() # signal failure: not a feedback
   } else {
-    return(m[2])
+    m[2]
   }
 }
