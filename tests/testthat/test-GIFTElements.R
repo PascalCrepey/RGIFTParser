@@ -17,7 +17,7 @@ test_that("Question title", {
 test_that("Question text",{
   raw = "[html]Pendant la dernière semaine du mois de septembre 2007, 90 personnes d’un petit village :"
   expect_equal(parse_question_text(raw), "[html]Pendant la dernière semaine du mois de septembre 2007, 90 personnes d’un petit village :")
-  expect_equal(RGIFTParser:::GIFTQuestionText()(raw)$L[[1]], "[html]Pendant la dernière semaine du mois de septembre 2007, 90 personnes d’un petit village :")
+  expect_equal(GIFTQuestionText()(raw)$L[[1]], "[html]Pendant la dernière semaine du mois de septembre 2007, 90 personnes d’un petit village :")
 })
 
 test_that("Single question", {
