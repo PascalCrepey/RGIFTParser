@@ -1,3 +1,7 @@
+# RGIFTParser 0.4.0
+
+* Added support for  question type identification
+
 # RGIFTParser 0.3.1
 
 * Added support for loading Quiz directly from files
