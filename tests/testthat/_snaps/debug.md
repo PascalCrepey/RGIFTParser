@@ -10,6 +10,7 @@
       Question text: What is the capital of France?
       Splitted answers: =Paris#Good answer !
       Answer: = :  : Paris : Good answer !
+      Question type: short_answer
     Output
       [[1]]
       [[1]]$category
@@ -37,6 +38,9 @@
       [[1]]$question_feedback
       [1] "A nice city !"
       
+      [[1]]$question_type
+      [1] "short_answer"
+      
       
 
 ---
@@ -51,6 +55,7 @@
       Question text: What is the capital of France?
       Splitted answers: =Paris#Good answer !
       Answer: = :  : Paris : Good answer !
+      Question type: short_answer
     Output
       Quiz: 
       Question:  ( No category )

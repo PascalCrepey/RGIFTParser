@@ -87,6 +87,9 @@
       
       
       
+      [[1]]$question_type
+      [1] "multiple_choice"
+      
       
 
 # math range question
@@ -105,7 +108,7 @@
       [1] "What is a number from 1 to 5?"
       
       [[1]]$question_type
-      [1] "numeric"
+      [1] "math_range_precision"
       
       [[1]]$answers
       [[1]]$answers[[1]]
@@ -135,7 +138,7 @@
       [1] "What is a number from 1 to 5?"
       
       [[1]]$question_type
-      [1] "numeric"
+      [1] "math_range_minmax"
       
       [[1]]$answers
       [[1]]$answers[[1]]
@@ -165,7 +168,7 @@
       [1] "When was Ulysses S. Grant born?"
       
       [[1]]$question_type
-      [1] "numeric"
+      [1] "multiple_numeric"
       
       [[1]]$answers
       [[1]]$answers[[1]]
@@ -210,6 +213,9 @@
       
       [[1]]$answers
       list()
+      
+      [[1]]$question_type
+      [1] "essay"
       
       
 
@@ -296,6 +302,9 @@
       
       
       
+      [[2]]$question_type
+      [1] "multiple_choice"
+      
       
       [[3]]
       [[3]]$category
@@ -340,6 +349,9 @@
       [[3]]$suffix_text
       [1] "equals four."
       
+      [[3]]$question_type
+      [1] "fill_in_the_blank"
+      
       
       [[4]]
       [[4]]$category
@@ -381,6 +393,9 @@
       
       
       
+      [[4]]$question_type
+      [1] "matching"
+      
       
       [[5]]
       [[5]]$category
@@ -393,7 +408,7 @@
       [1] "What is a number from 1 to 5?"
       
       [[5]]$question_type
-      [1] "numeric"
+      [1] "math_range_precision"
       
       [[5]]$answers
       [[5]]$answers[[1]]
@@ -417,7 +432,7 @@
       [1] "What is a number from 1 to 5?"
       
       [[6]]$question_type
-      [1] "numeric"
+      [1] "math_range_minmax"
       
       [[6]]$answers
       [[6]]$answers[[1]]
@@ -441,7 +456,7 @@
       [1] "When was Ulysses S. Grant born?"
       
       [[7]]$question_type
-      [1] "numeric"
+      [1] "multiple_numeric"
       
       [[7]]$answers
       [[7]]$answers[[1]]
@@ -480,6 +495,9 @@
       
       [[8]]$answers
       list()
+      
+      [[8]]$question_type
+      [1] "essay"
       
       
 

@@ -18,16 +18,25 @@ GIFTParser <- function(text, debug = FALSE){
     parcr::store("debug", TRUE)
     print(vec_text)
     res = parcr::reporter(GIFTBank())(vec_text)
-    return(res)
   }else{
     parcr::store("debug", FALSE)
     res = GIFTBank()(vec_text)
     if(!is.null(res$L)){
-      return(res$L)
+      res = res$L
     }else{
       stop("No question found in the string: ", text)
     }
   }
+  #now we identify the question type
+  res = lapply(res, \(x) {
+    question_type = find_question_type(x)
+    if(debug){
+      message("Question type: ", question_type)
+    }
+    x$question_type = question_type
+    x
+  })
+  res
 }
 
 
